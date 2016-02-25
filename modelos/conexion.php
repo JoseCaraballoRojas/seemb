@@ -1,49 +1,75 @@
-<?php
- 
-        class ConexionPGSQL{
- 
-                //declaración de variables
-                public $host; // para conectarnos a localhost o el ip del servidor de postgres
-                public $db; // seleccionar la base de datos que vamos a utilizar
-                public $user; // seleccionar el usuario con el que nos vamos a conectar
-                public $pass; // la clave del usuario
-                public $conexion;  //donde se guardara la conexión
-                public $url; //dirección de la conexión que se usara para destruirla mas adelante
- 
-                //creación del constructor
+<?php 
+
+        /** clase para  realizar la conexion a la base de datos y procesar las consultas requeridas. **/
+        class MySQL1{
+                private $dbhost;
+                private $dbusuario;
+                private $dbclave;
+                private $dbnombre;
+                private $conexion;
+                
+                //se ejecuta la funcuncion costructor para cargar los valores a las variables.
                 function __construct(){
-                        }
- 
-                //creación de la función para cargar los valores de la conexión.
-                public function cargarValores(){
-                        $this->host='localhost';
-                        $this->db='baseDatos';
-                        $this->user='usuario';
-                        $this->pass='clave';
-                        $this->conexion="host='$this->host' dbname='$this->db' user='$this->user' password='$this->pass' ";
-                        }
- 
-                        //función que se utilizara al momento de hacer la instancia de la clase
-                        function conectar(){
-                                $this->cargarValores();
-                                $this->url=pg_connect($this->conexion);
-                                return true;
-                        }
- 
-                        //función para destruir la conexión.
-                        function destruir(){
-                                pg_close($this->url);
-                        }
- 
+                    $this->dbhost="localhost";
+                    $this->dbusuario="seemb";
+                    $this->dbclave="seemb";
+                    $this->dbnombre="seemb";
                 }
- 
-                //instanciación de la clase conexión a postgresql.
-                $conexion = new ConexionPGSQL();
-                $conexion->conectar();
-                if($conexion->conectar()==true){
-                        echo "conexion exitosa";
-                        }else{
-                                echo "no se pudo conectar";
+
+                //funcion para realizar la conexion con la base de datos.
+                public function MySQL(){
+                        
+                        if (!isset($this->conexion)){
+                                
+                                $this->conexion=mysqli_connect($this->dbhost,$this->dbusuario,$this->dbclave,$this->dbnombre);
+                                
+                                 if (mysqli_connect_errno()) 
+                                        {
+                                        die('Error al conectar con mysql');
+                                }
                         }
- 
-?>
+
+                }
+                //funcion para realizar las CRUD acciones en la bases de datos.
+                public  function consultar($sql)
+                        {
+                                /** se declara una variable a la que se le asigna la ejecucion de la consulta**/
+                                $result=mysqli_query($this->conexion,$sql);
+                                /** se comprueba que la variable tenga algun valor si no tiene se prensenta un mensaje de error**/
+                                if(!$result)
+                                { 
+                                
+                        echo "MySQL Error:".mysql_error()."";
+                        }       
+                        else
+                        {
+                        /** se retorna el resultado de la consulta**/
+                        return $result;
+                        }
+                        }
+                //funcion para retornar lo valores en un array
+                public  function busca_array($consulta)
+                        {
+                                return mysqli_fetch_array($consulta);
+                        }
+                //funcion para saber el numero de filas encontradas
+                public function num_filas($consulta)
+                {
+                        return mysqli_num_rows($consulta);
+                }
+
+                //funcion para cerrar la conexion a la base de datos
+                public function desconectar()
+                        {
+                                mysqli_close($this->conexion);
+                        }
+
+
+                        
+
+                        
+
+        }
+
+        
+ ?>

@@ -3,8 +3,8 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Seemb</title>
-		<link rel="stylesheet" type="text/css" href="librerias/bootstrap/css/bootstrap.css">
-		<link rel="stylesheet" type="text/css" href="publico/css/estilo-index.css">
+		<link rel="stylesheet" type="text/css" href="../librerias/bootstrap/css/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="../publico/css/estilo-index.css">
 	</head>
 	<body id="body-index">
 		<br>
@@ -13,7 +13,7 @@
 				<div class="col-md-12" >
 					<!--<div class="page-header">-->
 					<header id="header-index">
-						<img src="publico/img/banner.jpg" class="img-responsive img-rounded img-banner" >
+						<img src="../publico/img/banner2.jpg" class="img-responsive img-rounded img-banner" >
 					</header> <!--....header-->
 					<!--</div>-->
 				</div>
@@ -26,21 +26,21 @@
 				<div class="row">
 					<div class="col-md-4 col-md-offset-4 ">
 					 	
-						 	<form class="form-signin">
+						 	<form class="form-signin" method="POST" action="../controladores/cotrolador_sesiones.php">
 						 		<br>			 		
 						        <h2 class="form-signin-heading text-center">Por Favor Inicie Sesion</h2>
 						        
 						       <!-- <label for="inputEmail" class="sr-only"></label>-->
 						        <label for="nombre_de_usuario"> Usuario :</label>
 						        <br>
-						        <input type="text" id="inputusuario" class="form-control" placeholder="Introduce tu usuario" required autofocus>
+						        <input type="text" id="inputusuario" class="form-control" placeholder="Introduce tu usuario" required autofocus autocomplete="off" name="usuario">
 						        <br>
 						        <!--<label for="inputPassword" class="sr-only">Password</label>-->
 						         <label for="password"> Contraseña:</label>
 						        <br>
-						        <input type="password" id="inputPassword" class="form-control" placeholder="Introduce tu Contraseña" required>
+						        <input type="password" id="inputPassword" class="form-control" placeholder="Introduce tu Contraseña" required name="password">
 			        			<br>
-			        			<button class="btn btn-lg btn-success btn-block" type="submit">Iniciar Sesion</button>
+			        			<button class="btn btn-lg btn-success btn-block" type="submit" name="iniciarsesion" value="iniciar" >Iniciar Sesion</button>
 			        			<br><br><br>
 			     			</form>
 			     			

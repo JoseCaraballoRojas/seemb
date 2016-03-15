@@ -26,14 +26,20 @@ include_once('../../modelos/grupos.php');
     //{
       $listar_grupos= new Grupos();
       $retorno=$listar_grupos->leer();
-      echo "<section><b>Grupos Alimenticios Registrados</b></section>";
+      echo "<section>
+            <span class='text-center'><h2>Grupos Alimenticios Registrados</h2>
+            <a href='agregar.php' class='btn btn-success pull-right'>
+                <span class='glyphicon glyphicon-plus-sign'> Crear</span>
+            </a>
+            </section>";
       echo "
-        <table class='table table-bordered'>
-          <thead>
+        <table class='table table-bordered  table-hover table-condensed table-striped'>
+          <thead >
             <tr>
-              <th>ID</th>
-              <th>GRUPO</th>
-              <th>PRIORIDAD</th>
+              <th class='text-center'>ID</th>
+              <th class='text-center'>GRUPO</th>
+              <th class='text-center'>PRIORIDAD</th>
+              <th class='text-center'>ACCIONES</th>
             </tr>
           </thead>
           <tbody>";
@@ -47,15 +53,26 @@ include_once('../../modelos/grupos.php');
               foreach($retorno as $datos){
       
                 echo "<tr> 
-                          <td >
+                          <td class='text-center'>
                               ".$datos['id_grupo']."
                           </td>
                           <td>
                               ".$datos['grupo']."
                           </td>
-                          <td>
+                          <td class='text-center'>
                               ".$datos['prioridad']."
-                          </td></tr>";
+                          </td>
+                          <td class='text-center'> 
+                              
+                              <a href='editar.php?id_grupo=".$datos['id_grupo']."' class='btn btn-primary btn-sm '>
+                              <span class='glyphicon glyphicon-pencil'> Editar</span>
+                              </a>
+                              <a href='../../controladores/grupos/controlador_borrar.php?id_grupo=".$datos['id_grupo']."' class='btn btn-danger btn-sm'>
+                              <span class='glyphicon glyphicon-trash'> Borrar</span>
+                              </a>
+
+                          </td>
+                      </tr>";
         
               }
           }

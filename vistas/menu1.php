@@ -1,7 +1,10 @@
+<?php
+  include_once("../aplicacion/config.php");
+?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-  <title>Bootstrap Case</title>
+  <title>SEBCEMB</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="../librerias/bootstrap/css/bootstrap.css">
@@ -18,11 +21,11 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="#">Seemb</a>
+      <a class="navbar-brand" href="#">SEBCEMB</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Inicio</a></li>
+        <li class="active"><a href="inicio.php">Inicio</a></li>
         <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">Seguridad <span class="caret"></span></a>
           <ul class="dropdown-menu">

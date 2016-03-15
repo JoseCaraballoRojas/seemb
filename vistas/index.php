@@ -11,11 +11,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12" >
-					<!--<div class="page-header">-->
-					<header id="header-index">
-						<img src="../publico/img/banner2.jpg" class="img-responsive img-rounded img-banner" >
-					</header> <!--....header-->
-					<!--</div>-->
+					<?php include_once("default/header.php"); ?>
 				</div>
 			</div>
 		</div>
@@ -26,7 +22,7 @@
 				<div class="row">
 					<div class="col-md-4 col-md-offset-4 ">
 					 	
-						 	<form class="form-signin" method="POST" action="../controladores/cotrolador_sesiones.php">
+						 	<form class="form-signin " method="POST" action="../controladores/cotrolador_sesiones.php">
 						 		<br>			 		
 						        <h2 class="form-signin-heading text-center">Por Favor Inicie Sesion</h2>
 						        
@@ -54,11 +50,9 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12">
-						<footer id="pie-index" class="text-center" >
-							<!--<p class="text-center">Creado Bajo estandares GPL</p>-->
-							<button class="btn btn-lg btn-default btn-block "><p class="text-center "> <b>PHP5  PostgreSQL  CSS3  HTML5 </b></p></button>
-							
-						</footer>
+						<!--FOOTER-->
+							<?php include_once("default/footer.php"); ?>
+						<!--FOOTER-->
 					</div>
 				</div>
 			</div>

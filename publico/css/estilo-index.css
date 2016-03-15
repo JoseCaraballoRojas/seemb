@@ -1,9 +1,6 @@
-#pie-index{
-	background-color: #CCD8D2;
-				
-}
+
 #section-index{
-	background-color: #CCD8D2;
+	background-color: #FDEAE8;
 	border-radius: 5px;
 }
 #header-index{
@@ -15,5 +12,19 @@
 	}
 .img-banner{
 	width: 100%;
-	height: 200px;
+	height: 12em;
+	border-top-right-radius: 5px;
+	border-top-left-radius: 5px;
+}
+
+#img-logo
+{
+	
+	margin-left: 20%;
+	margin-top: 5%;
+}
+
+.pie{
+	background-color:#860000;
+	color: white;
 }

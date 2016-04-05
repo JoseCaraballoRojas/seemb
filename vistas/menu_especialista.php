@@ -1,7 +1,13 @@
-<nav class="navbar navbar-inverse">
+<?php 
+@session_start();
+if(isset($_SESSION['usuario']))
+{
+$usuario=$_SESSION['usuario'];
+  ?>
+<nav class="navbar navbar-inverse ">
 	<div class="container-fluid">
 		<div class="navbar-header">
-			<b><a class="navbar-brand" href="#">SEBCEMB</a></b>
+			<b><a class="navbar-brand" >SEBCEMB</a></b>
 		</div>
 		<div class="collapse navbar-collapse " id="myNavbar">
 			<b>
@@ -12,7 +18,11 @@
 					</a>
 				</li>
 				<li id="li_categorias">
-					<a href="vista_listar_categorias.php">Categorias</a>
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Categorias<span class="caret"></span></a>
+					<ul class="dropdown-menu">
+			            <li><a href="vista_crear_categoria.php">Crear</a></li>
+			            <li><a href="vista_listar_categorias.php">Listar </a></li>
+			          </ul>
 				</li>
 				<li id="li_grupos">
 					<a href="vista_listar_grupos.php">Grupos</a>
@@ -30,7 +40,7 @@
 					<a href="vista_listar_productos.php">Productos</a>
 				</li>
 				<li>
-					<a href="vista_crear_plato.php">Platos</a>
+					<a href="vista_listar_platos.php">Platos</a>
 				</li>
 				<li>
 					<a href="#">Menus</a>
@@ -38,13 +48,16 @@
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
 					<li>
-						<a href="#"><span class="glyphicon glyphicon-user"></span>jose </a>
+						<a href="#"><span class="glyphicon glyphicon-user"></span> <?php echo " ",$usuario ?> </a>
 					</li>
 					<li>
-						<a href="#"><span class="glyphicon glyphicon-log-out"></span><b> Salir</b></a>
+						<a href="../controladores/sesiones/controlador_cerrar.php" ><span class="glyphicon glyphicon-log-out"></span><b> Salir</b></a>
 					</li>
 				</ul>
 				</b>
 		</div>
 	</div>
 </nav>
+<?php
+}
+?>

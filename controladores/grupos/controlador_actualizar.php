@@ -1,5 +1,5 @@
 <?php
-include("../../modelos/grupos.php");
+include("../../modelos/Grupo.php");
 
 $grupo=$_POST['grupo'];
 $prioridad=$_POST['prioridad'];
@@ -11,11 +11,11 @@ if((empty($grupo) || strlen($grupo)<4) ||(empty($prioridad)) || (empty($id_grupo
 }
 else{
 
-		$actualizar_grupo= new Grupos();
+		$actualizar_grupo= new Grupo();
 
-		$mensaje=$actualizar_grupo->actualizar($id_grupo,$grupo,$prioridad);
+		$mensaje=$actualizar_grupo->Actualizar($id_grupo,$grupo,$prioridad);
 		echo "<script  type='text/javascript' charset='utf-8' >alert('$mensaje');
-		window.location.assign('../../vistas/grupos/listar.php');
+		window.location.assign('../../vistas/vista_listar_grupos.php');
 		</script>";		 
 	} 
 

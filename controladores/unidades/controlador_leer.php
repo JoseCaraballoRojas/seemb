@@ -28,7 +28,7 @@ include_once('../../modelos/Unidad.php');
       $retorno=$listar_unidades->leer();
       echo "<section>
             <span class='text-center'><h2>Unidades Registradas</h2>
-            <a href='vista_crear.php' class='btn btn-success pull-right'>
+            <a href='vista_crear_unidad.php' class='btn btn-success pull-right'>
                 <span class='glyphicon glyphicon-plus-sign'> Crear</span>
             </a>
             </section>";
@@ -64,10 +64,10 @@ include_once('../../modelos/Unidad.php');
                           </td>
                           <td class='text-center'> 
                               
-                              <a href='vista_editar.php?id_unidad=".$datos['id_unidad']."' class='btn btn-primary btn-sm '>
+                              <a href='vista_editar_unidad.php?id_unidad=".$datos['id_unidad']."' class='btn btn-primary btn-sm '>
                               <span class='glyphicon glyphicon-pencil'> Editar</span>
                               </a>
-                              <a href='../../controladores/unidades/controlador_borrar.php?id_unidad=".$datos['id_unidad']."' class='btn btn-danger btn-sm'>
+                              <a href='../controladores/unidades/controlador_borrar.php?id_unidad=".$datos['id_unidad']."' class='btn btn-danger btn-sm'>
                               <span class='glyphicon glyphicon-trash'> Borrar</span>
                               </a>
 

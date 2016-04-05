@@ -39,7 +39,7 @@
                                 if(!$result)
                                 { 
                                 
-                        echo "MySQL Error:".mysql_error()."";
+                        echo "MySQL Error:".mysqli_error($this->conexion)."\n";
                         }       
                         else
                         {

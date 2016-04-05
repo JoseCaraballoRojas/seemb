@@ -2,7 +2,7 @@
 /* Controlador para llevar un control de las sesiones en el sistema de forma correcta y segura */
 mysqli_report(0);
 //se incluye la clase conexion.
-include_once('../../modelos/grupos.php');
+include_once('../../modelos/Grupo.php');
 
 // se verifica que se llamo a este controlador a traves de la vista correspondiente.
 /*if(isset($_POST['iniciarsesion']) && ($_POST['iniciarsesion']=="iniciar") )
@@ -24,11 +24,11 @@ include_once('../../modelos/grupos.php');
     
    // else
     //{
-      $listar_grupos= new Grupos();
-      $retorno=$listar_grupos->leer();
+      $listar_grupos= new Grupo();
+      $retorno=$listar_grupos->Leer();
       echo "<section>
             <span class='text-center'><h2>Grupos Alimenticios Registrados</h2>
-            <a href='agregar.php' class='btn btn-success pull-right'>
+            <a href='vista_crear_grupo.php' class='btn btn-success pull-right'>
                 <span class='glyphicon glyphicon-plus-sign'> Crear</span>
             </a>
             </section>";
@@ -64,10 +64,10 @@ include_once('../../modelos/grupos.php');
                           </td>
                           <td class='text-center'> 
                               
-                              <a href='editar.php?id_grupo=".$datos['id_grupo']."' class='btn btn-primary btn-sm '>
+                              <a href='vista_editar_grupo.php?id_grupo=".$datos['id_grupo']."' class='btn btn-primary btn-sm '>
                               <span class='glyphicon glyphicon-pencil'> Editar</span>
                               </a>
-                              <a href='../../controladores/grupos/controlador_borrar.php?id_grupo=".$datos['id_grupo']."' class='btn btn-danger btn-sm'>
+                              <a href='../controladores/grupos/controlador_borrar.php?id_grupo=".$datos['id_grupo']."' class='btn btn-danger btn-sm'>
                               <span class='glyphicon glyphicon-trash'> Borrar</span>
                               </a>
 

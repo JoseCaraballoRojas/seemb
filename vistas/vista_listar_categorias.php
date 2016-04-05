@@ -2,9 +2,9 @@
 header ("Cache-Control: no-cache, must-revalidate"); //no guardar en CACHE
 header ("Pragma: no-cache");
 @session_start();
-//if(isset($_SESSION['usuario']))
-//{
-//$usuario=$_SESSION['usuario'];
+if(isset($_SESSION['usuario']))
+{
+$usuario=$_SESSION['usuario'];
   ?>
 <!DOCTYPE html>	
 <html lang="es">
@@ -30,16 +30,6 @@ header ("Pragma: no-cache");
 						height: 350px;
 						overflow-y:scroll;
 					  }
-			.navbar {
-	       			 background-color:#860000;
-	        		/* background-image: none;*/
-	        		color: white;
-
-	    			}
-	    	.footer{
-	    			 background-color:#860000;
-	    			 color: white;
-	    	}
   		</style>
 	</head>
 	<body id="body-index">
@@ -92,5 +82,8 @@ header ("Pragma: no-cache");
 </html>
 
 <?php
-//}
+}
+else{
+	header('Location: index.php' );
+}
 ?>

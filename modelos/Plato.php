@@ -2,21 +2,27 @@
 	include_once("conexion.php");
 	/*
 	 clase para gestionar los platos que formaran parte del menu 
-	 de los platos que integra un menu registrado en la base de datos del sistema. 
+	 registrado en la base de datos del sistema. 
 	*/
-	class Nutriente
-		{
+	class Plato{
+			private $_id_plato;
 			private $_plato;
 			private $_descripcion;
 			private $_tipo;
-			private $_cantidad;
-			
-			//Funcion para leer los Nutrientes guardados en la base de datos y retornarlas.
+			private $_porcion;
+			private $_unidad;
+			private $_calorias;
+			private $_carbohidratos;
+			private $_grasas;
+			private $_proteinas;
+			private $_azucares;
+			private $_sal;
+			//Funcion para leer los Platos guardados en la base de datos y retornarlos.
 			public function Leer()
 			{
 				$consulta=new MySQL1();
 				$consulta->MySQL();
-				$resultado=$consulta->consultar("SELECT n.id_unidad,n.nutriente, n.id_nutriente, u.id_unidad, u.unidad FROM unidades AS u JOIN nutrientes As n on n.id_unidad=u.id_unidad ");
+				$resultado=$consulta->consultar("SELECT p.id_plato,p.id_unidad,p.id_tipo,p.plato,p.descripcion,p.porcion,p.calorias,p.carbohidratos,p.grasas,p.proteinas,p.azucares,p.sal, u.id_unidad, u.unidad,t.id_tipo, t.tipo FROM platos AS p JOIN unidades As u on p.id_unidad=u.id_unidad JOIN tipos As t on p.id_tipo=t.id_tipo");
 				if($consulta->num_filas($resultado)>0)
 				    {
 				    	
@@ -28,32 +34,42 @@
 
 			}
 
-			//Funcion para crear nutrientes  y almacenarlos en la base de datos ..
-			public function Crear($nutriente,$unidad)
+			//Funcion para crear platos y almacenarlos en la base de datos ..
+			public function Crear($id_plato,$plato,$descripcion,$porcion,$unidad,$tipo,$calorias,$carbohidratos,$grasas,$proteinas,$azucares,$sal)
 			{
 				$crear=new MySQL1();
 				$crear->MySQL();
-				$this->_nutriente=$nutriente;
+				$this->_id_plato=$id_plato;
+				$this->_plato=$plato;
+				$this->_descripcion=$descripcion;
+				$this->_porcion=$porcion;
 				$this->_unidad=$unidad;
+				$this->_tipo=$tipo;
+				$this->_calorias=$calorias;
+				$this->_carbohidratos=$carbohidratos;
+				$this->_grasas=$grasas;
+				$this->_proteinas=$proteinas;
+				$this->_azucares=$azucares;
+				$this->_sal=$sal;
 								
-				//se consulta la base de datos para saber si ya esta resgistrado el nutriente
-				$query=$crear->consultar("SELECT *FROM nutrientes WHERE nutriente='$this->_nutriente'");
+				//se consulta la base de datos para saber si ya esta resgistrado un plato
+				$query=$crear->consultar("SELECT *FROM platos WHERE plato='$this->_plato'");
 				//se comprueba el resultado de la consulta
 				if(($crear->num_filas($query))>0)
-				{	//si ya hay una unidadad  igual registrada se emite un mensaje
-					$mensaje="El Nutriente ya esta creado ";
+				{	//si ya hay un plato  igual registrado se emite un mensaje
+					$mensaje="El plato ya esta creado ";
 					return $mensaje;
 				}
 				else{
-					//si el nutriente no esta registrado en la base de datos se registra..	
-					if($crear->consultar("INSERT INTO nutrientes (nutriente,id_unidad) VALUES('$this->_nutriente','$this->_unidad')"))
+					//si el plato no esta registrado en la base de datos se registra..	
+					if($crear->consultar("INSERT INTO platos (id_plato,plato,descripcion,porcion,id_unidad,id_tipo,calorias,carbohidratos,grasas,proteinas,azucares,sal) VALUES('$this->_id_plato','$this->_plato','$this->_descripcion','$this->_porcion','$this->_unidad','$this->_tipo','$this->_calorias','$this->_carbohidratos','$this->_grasas','$this->_proteinas','$this->_azucares','$this->_sal')") == TRUE )
 						{	//si todo se realizo correctamente se emite un mensaje
-							$mensaje="El nutriente se Creo Exitosamente";
+							$mensaje=TRUE;
 							return $mensaje;
 						}
 						else
 						{	//mensaje si ha ocurrido un error
-							$mensaje="Error al Crear El Nutriente";
+							$mensaje=FALSE;
 							return  $mensaje;
 						}
 					//se cierra la conexion a la base de datos
@@ -62,7 +78,7 @@
 			
 			}
 
-			//Funcion para buscar los nutrientes registrados en la base de datos.
+			//Funcion para buscar los platos registrados en la base de datos.
 			public function Buscar($id_nutriente)
 			{
 				$buscar=new MySQL1();
@@ -135,6 +151,24 @@
 				//se cierra la conexion a la base de datos
 				$borrar->desconectar();
 			}
+
+			//Funcion para buscar los ide de todos los platos registrados y mostrarlos.
+			public function Platos_registrados()
+			{
+				$consulta=new MySQL1();
+				$consulta->MySQL();
+				$resultado=$consulta->consultar("SELECT id_plato FROM platos");
+				if($consulta->num_filas($resultado)>0)
+				    {
+				    	
+				    	return $resultado;
+				    }
+				else{
+						return false;
+					}
+
+			}
+
 		}
 
  ?>

@@ -2,9 +2,8 @@
 header ("Cache-Control: no-cache, must-revalidate"); //no guardar en CACHE
 header ("Pragma: no-cache");
 @session_start();
-//if(isset($_SESSION['usuario']))
-//{
-//$usuario=$_SESSION['usuario'];
+if(isset($_SESSION['usuario']))
+{
   ?>
 <!DOCTYPE html>	
 <html lang="es">
@@ -20,15 +19,10 @@ header ("Pragma: no-cache");
   			
   		</script>
   		<style type="text/css">
-			#contenido{
-						height: 350px;
+			#area{
+						height: 400px;
 					  }
-			.navbar {
-	       			 background-color:#860000;
-	        		/* background-image: none;*/
-	        		color: white;
-
-	    			}
+			
   		</style>
   		
 	</head>
@@ -57,36 +51,35 @@ header ("Pragma: no-cache");
 					</div>	
 
 				</div>
-				<div class="row">
+				<div class="row" id="area">
 					<div class="col-md-4 col-md-offset-4 ">
-					 	
-						 	<form class="form-horizontal" method="POST" action="../controladores/tipos/controlador_crear.php">
-						 		<br>			 		
-						        <h2 class="form-signin-heading text-center">Crear Tipos de Platos</h2>
-						        
-						        <label for="grupo"> Tipo:</label>
-						        <br>
-						        <input type="text" id="inputtipo" class="form-control input-xlarge" placeholder="Ingresa un Tipo de Plato" required autofocus autocomplete="off" name="tipo">
-						        <br>
-						        <label for="grupo"> Turno:</label>
-						        <br>
-						        <select name="turno" id="selectturno" class="form-control" required>
-						        	<option value="selecione">Seleccione</option>
-						        	<option value="Almuerzo">Almuerzo</option>
-						        	<option value="Desayuno">Desayuno</option>
-						        	<option value="Cena">Cena</option>
-						        </select>
-								<br>
-								<br>
-								<div class="text-center">
-									<a class="btn  btn-info " href="vista_listar_tipos.php" ><span class='fa fa-reply'>  Atras</span></a>
-									<button class="btn  btn-danger " type="reset" name="cancelar" value="borrar" ><span class='glyphicon glyphicon-remove'> Borrar</span></button>
-									<button class="btn  btn-success " type="submit" name="crear" value="crear" ><span class='glyphicon glyphicon-floppy-disk'> Crear</span></button>
+						<div class="panel panel-danger">
+								<div class="panel-heading">
+									<h2 class="panel-title"><b>Crear Tipos de Platos</b></h2>
 								</div>
-			        			<br><br><br>
-			     			</form>
-			     			
-					</div>	
+
+								<div class="panel-body">
+							 	<form class="form-horizontal" method="POST" action="../controladores/tipos/controlador_crear.php">
+							 		<br>			 		
+							        
+							        
+							        <label for="grupo"> Tipo:</label>
+							        <br>
+							        <input type="text" id="inputtipo" class="form-control input-xlarge" placeholder="Ingresa un Tipo de Plato" required autofocus autocomplete="off" name="tipo">
+							        <br>
+									<br>
+								</div>
+
+								<div class="panel-footer">
+									<div class="text-center">
+										<a class="btn  btn-info " href="vista_listar_tipos.php" ><span class='fa fa-reply'>  Atras</span></a>
+										<button class="btn  btn-danger " type="reset" name="cancelar" value="borrar" ><span class='glyphicon glyphicon-remove'> Borrar</span></button>
+										<button class="btn  btn-success " type="submit" name="crear" value="crear" ><span class='glyphicon glyphicon-floppy-disk'> Crear</span></button>
+									</div>
+				        			<br>
+				     			</form>
+				     			</div>
+						</div>	
 			</section> <!--section-->
 			</div>
 			
@@ -103,7 +96,9 @@ header ("Pragma: no-cache");
 		
 	</body>		
 </html>
-
 <?php
-//}
+}
+else{
+	header('Location: index.php' );
+}
 ?>

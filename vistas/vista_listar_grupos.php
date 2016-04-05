@@ -1,3 +1,11 @@
+<?php 
+header ("Cache-Control: no-cache, must-revalidate"); //no guardar en CACHE
+header ("Pragma: no-cache");
+@session_start();
+if(isset($_SESSION['usuario']))
+{
+$usuario=$_SESSION['usuario'];
+  ?>
 <!DOCTYPE html>	
 <html lang="es">
 	<head>
@@ -73,3 +81,9 @@
 		
 	</body>		
 </html>
+<?php
+}
+else{
+	header('Location: index.php' );
+}
+?>

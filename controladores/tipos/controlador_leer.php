@@ -32,7 +32,7 @@ include_once('../../modelos/Tipo.php');
                       <tr>
                         <th class='text-center'>ID</th>
                         <th class='text-center'>TIPO</th>
-                        <th class='text-center'>TURNO</th>
+                       
                         <th class='text-center'>ACCIONES</th>
                       </tr>
                     </thead>
@@ -46,9 +46,7 @@ include_once('../../modelos/Tipo.php');
                           <td>
                               ".$datos['tipo']."
                           </td>
-                          <td class='text-center'>
-                              ".$datos['turno']."
-                          </td>
+                          
                           <td class='text-center'> 
                               
                               <a href='vista_editar_tipo.php?id_tipo=".$datos['id_tipo']."' class='btn btn-primary btn-sm '>

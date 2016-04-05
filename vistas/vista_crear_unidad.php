@@ -2,9 +2,8 @@
 header ("Cache-Control: no-cache, must-revalidate"); //no guardar en CACHE
 header ("Pragma: no-cache");
 @session_start();
-//if(isset($_SESSION['usuario']))
-//{
-//$usuario=$_SESSION['usuario'];
+if(isset($_SESSION['usuario']))
+{
   ?>
 <!DOCTYPE html>	
 <html lang="es">
@@ -23,12 +22,7 @@ header ("Pragma: no-cache");
 			#contenido{
 						height: 350px;
 					  }
-			.navbar {
-	       			 background-color:#860000;
-	        		/* background-image: none;*/
-	        		color: white;
-
-	    			}
+			
   		</style>
 	</head>
 	<body id="body-index">
@@ -72,7 +66,7 @@ header ("Pragma: no-cache");
 								<br>
 								<br>
 								<div class="text-center">
-									<a class="btn  btn-info " href="listar.php" ><span class='fa fa-reply'>  Atras</span></a>
+									<a class="btn  btn-info " href="vista_listar_unidades.php" ><span class='fa fa-reply'>  Atras</span></a>
 									<button class="btn  btn-danger " type="reset" name="cancelar" value="borrar" ><span class='glyphicon glyphicon-remove'> Borrar</span></button>
 									<button class="btn  btn-success " type="submit" name="crear" value="crear" ><span class='glyphicon glyphicon-floppy-disk'> Crear</span></button>
 								</div>
@@ -96,7 +90,9 @@ header ("Pragma: no-cache");
 		
 	</body>		
 </html>
-
 <?php
-//}
+}
+else{
+	header('Location: index.php' );
+}
 ?>

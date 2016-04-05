@@ -3,13 +3,12 @@
 	/*
 	 clase para gestionar los grupos de alimentos en la base de conocimientos del sistema... 
 	*/
-	class Grupos
-		{
+	class Grupo{
 			private $grupo;
 			private $prioridad;
 			private $mensaje="nose ejecuto la funcion";
 			//Funcion para leer los grupos guardados en la base de datos y retornarlos.
-			public function leer()
+			public function Leer()
 			{
 				$consulta=new MySQL1();
 				$consulta->MySQL();
@@ -26,7 +25,7 @@
 			}
 
 			//Funcion para agregar nuevos grupos a la base de datos ..
-			public function crear($grupo,$prioridad)
+			public function Crear($grupo,$prioridad)
 			{
 				$crear=new MySQL1();
 				$crear->MySQL();
@@ -58,7 +57,7 @@
 			
 			}
 
-			public function editar($id_grupo,$opc)
+			public function Editar($id_grupo,$opc)
 			{
 				$editar=new MySQL1();
 				$editar->MySQL();
@@ -78,7 +77,7 @@
 			}
 
 			//funcion para actualizar los grupos registrados.
-			public function actualizar($id_grupo,$grupo,$prioridad)
+			public function Actualizar($id_grupo,$grupo,$prioridad)
 			{
 				$actualizar= new MySQL1();
 				$actualizar->MySQL();
@@ -98,7 +97,7 @@
 			}
 
 			// funcion para borrar  grupos registrados en el sistema.
-			public function borrar($id_grupo)
+			public function Borrar($id_grupo)
 			{
 				
 				$borrar=new MySQL1();

@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Documento sin t&iacute;tulo</title>
+<script>
+var nav4 = window.Event ? true : false;
+function acceptNumNumero(evt)
+{
+// NOTE: Backspace = 8, Enter = 13, '0' = 48, '9' = 57
+var key = nav4 ? evt.which : evt.keyCode;
+return ((key >= 48) && (key <= 57) || (key == 8));
+}
+ 
+</script>
+ 
+</head>
+ 
+<body>
+<form name="form1" action="" method="post">
+<input type="text" name="medida" onKeyPress="return acceptNumNumero(event)">
+</form>
+</body>
+</html>
+ 

@@ -2,9 +2,9 @@
 header ("Cache-Control: no-cache, must-revalidate"); //no guardar en CACHE
 header ("Pragma: no-cache");
 @session_start();
-//if(isset($_SESSION['usuario']))
-//{
-//$usuario=$_SESSION['usuario'];
+if(isset($_SESSION['usuario']))
+{
+
 $id_producto=$_GET['id_producto'];
   ?>
 <!DOCTYPE html>	
@@ -86,8 +86,9 @@ $id_producto=$_GET['id_producto'];
 		
 	</body>		
 </html>
-
 <?php
-//}
-
+}
+else{
+	header('Location: index.php' );
+}
 ?>

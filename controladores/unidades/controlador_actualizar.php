@@ -15,7 +15,7 @@ else{
 
 		$mensaje=$actualizar_unidad->Actualizar($id_unidad,$unidad,$detalle);
 		echo "<script  type='text/javascript' charset='utf-8' >alert('$mensaje');
-		window.location.assign('../../vistas/unidades/vista_listar.php');
+		window.location.assign('../../vistas/vista_listar_unidades.php');
 		</script>";		 
 	} 
 

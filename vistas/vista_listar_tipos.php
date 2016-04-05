@@ -2,9 +2,8 @@
 header ("Cache-Control: no-cache, must-revalidate"); //no guardar en CACHE
 header ("Pragma: no-cache");
 @session_start();
-//if(isset($_SESSION['usuario']))
-//{
-//$usuario=$_SESSION['usuario'];
+if(isset($_SESSION['usuario']))
+{
   ?>
 <!DOCTYPE html>	
 <html lang="es">
@@ -83,7 +82,9 @@ header ("Pragma: no-cache");
 		
 	</body>		
 </html>
-
 <?php
-//}
+}
+else{
+	header('Location: index.php' );
+}
 ?>

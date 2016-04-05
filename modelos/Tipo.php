@@ -7,7 +7,7 @@
 	class Tipo{
 		
 			private $_tipo;
-			private $_turno;
+			
 			
 			//Funcion para leer los tipos de platos en la base de datos y retornarlos.
 			public function Leer()
@@ -27,12 +27,11 @@
 			}
 
 			//Funcion para crear tipos de platos y almacenarlos en la base de datos ..
-			public function Crear($tipo,$turno)
+			public function Crear($tipo)
 			{
 				$crear=new MySQL1();
 				$crear->MySQL();
 				$this->_tipo=$tipo;
-				$this->_turno=$turno;
 								
 				//se consulta la base de datos para saber si ya esta resgistrado el tipo de plato.
 				$query=$crear->consultar("SELECT *FROM tipos WHERE tipo='$this->_tipo'");
@@ -44,7 +43,7 @@
 				}
 				else{
 					//si el tipo de plato no esta registrado en la base de datos se registra..	
-					if($crear->consultar("INSERT INTO tipos (tipo,turno) VALUES('$this->_tipo','$this->_turno')"))
+					if($crear->consultar("INSERT INTO tipos (tipo) VALUES('$this->_tipo')"))
 						{	//si todo se realizo correctamente se emite un mensaje
 							$mensaje="El tipo de plato se Creo exitosamente";
 							return $mensaje;
@@ -79,16 +78,16 @@
 			}
 
 			//funcion para actualizar los tipos de platos registrados.
-			public function Actualizar($id_tipo,$tipo,$turno)
+			public function Actualizar($id_tipo,$tipo)
 			{
 				$actualizar= new MySQL1();
 				$actualizar->MySQL();
 				$this->_tipo=$tipo;
-				$this->_turno=$turno;
+				
 				
 
 				//se comprueba a travez de una condicion si se ejecuta la actualizacion de la unidad.
-				if($actualizar->consultar("UPDATE tipos set tipo='$this->_tipo', turno='$this->_turno' WHERE id_tipo='$id_tipo'")){	
+				if($actualizar->consultar("UPDATE tipos set tipo='$this->_tipo' WHERE id_tipo='$id_tipo'")){	
 					//si todo se realizo correctamente se emite un mensaje
 					$mensaje="el tipo  de plato se actualizo exitosamente";
 					return $mensaje;

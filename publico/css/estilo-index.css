@@ -3,9 +3,7 @@
 	background-color: #FDEAE8;
 	border-radius: 5px;
 }
-#header-index{
-	
-}
+
 #body-index{
 	background-color: #E4E4E4;
 
@@ -19,12 +17,11 @@
 
 #img-logo
 {
-	
 	margin-left: 20%;
 	margin-top: 5%;
 }
 
 .pie{
-	background-color:#860000;
+	background-color:#993333;
 	color: white;
 }

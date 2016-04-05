@@ -2,9 +2,9 @@
 header ("Cache-Control: no-cache, must-revalidate"); //no guardar en CACHE
 header ("Pragma: no-cache");
 @session_start();
-//if(isset($_SESSION['usuario']))
-//{
-//$usuario=$_SESSION['usuario'];
+if(isset($_SESSION['usuario']))
+{
+
 $id_grupo=$_GET['id_grupo'];
   ?>
 <!DOCTYPE html>	
@@ -22,12 +22,7 @@ $id_grupo=$_GET['id_grupo'];
 			#contenido{
 						height: 350px;
 					  }
-			.navbar{
-	       			 background-color:#860000;
-	        		/* background-image: none;*/
-	        		color: white;
-
-	    			}
+			
   		</style>
   		<script>
   			$(document).ready(function(){
@@ -89,8 +84,9 @@ $id_grupo=$_GET['id_grupo'];
 		
 	</body>		
 </html>
-
 <?php
-//}
-
+}
+else{
+	header('Location: index.php' );
+}
 ?>

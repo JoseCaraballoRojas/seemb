@@ -1,5 +1,5 @@
 <?php
-include("../../modelos/grupos.php");
+include("../../modelos/Grupo.php");
 
 $id_grupo=$_POST['id_recibido'];
 $grupo="";
@@ -8,14 +8,14 @@ $prioridad="";
 if((empty($id_grupo) || strlen($id_grupo)<1) ){
 	$msgError="el id  del grupo es incorrecto";
 	echo "<script  type='text/javascript' charset='utf-8' >alert('$msgError');
-		window.location.assign('../../vistas/grupos/listar.php');
+		window.location.assign('../../vistas/vista_listar_grupos.php');
 		</script>";	
 }
 else{
 
-		$editar_grupo= new Grupos();
+		$editar_grupo= new Grupo();
 		$opc='buscar';
-		$retorno=$editar_grupo->editar($id_grupo,$opc);
+		$retorno=$editar_grupo->Editar($id_grupo,$opc);
 		foreach($retorno as $datos){
 
 			$grupo=$datos['grupo'];
@@ -26,7 +26,7 @@ else{
 
 
 echo"
-	<form class='form-horizontal' method='POST' action='../../controladores/grupos/controlador_actualizar.php'>
+	<form class='form-horizontal' method='POST' action='../controladores/grupos/controlador_actualizar.php'>
 	<br>			 		
     <h2 class='form-signin-heading text-center'>Editar Grupo</h2>
     
@@ -78,7 +78,7 @@ echo"
 	<br>
 	<br>
 	<div class='text-center'>
-		<a class='btn  btn-info' href='listar.php' ><span class='fa fa-reply'> Atras</span></a>
+		<a class='btn  btn-info' href='vista_listar_grupos.php' ><span class='fa fa-reply'> Atras</span></a>
 		<button class='btn  btn-danger' type='reset' name='cancelar'  ><span class='glyphicon glyphicon-remove'> Borrar</span></button>
 		<button class='btn  btn-success' type='submit' name='actualizar' ><span class='glyphicon glyphicon-floppy-disk'> Actualizar</span></button>
 	</div>

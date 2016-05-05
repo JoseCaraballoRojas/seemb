@@ -76,7 +76,7 @@ if(isset($_SESSION['usuario']))
 								<br>
 								<br>
 								<div class="text-center">
-									<a class="btn  btn-info " href="listar.php" ><span class='fa fa-reply'>  Atras</span></a>
+									<a class="btn  btn-info " href="vista_listar_grupos.php" ><span class='fa fa-reply'>  Atras</span></a>
 									<button class="btn  btn-danger " type="reset" name="cancelar" value="agregar" ><span class='glyphicon glyphicon-remove'> Borrar</span></button>
 									<button class="btn  btn-success " type="submit" name="agregar" value="agregar" ><span class='glyphicon glyphicon-floppy-disk'> Agregar</span></button>
 								</div>

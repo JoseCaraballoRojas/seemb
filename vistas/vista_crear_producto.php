@@ -74,9 +74,6 @@ if(isset($_SESSION['usuario']))
 						        <label > Presentacion:</label>
 						        <br>
 						        <input type="text" id="inputpresentacion" class="form-control input-xlarge" placeholder="Ingresa una presentacion" required autofocus autocomplete="off" name="presentacion">
-						        <label > Fecha de Vencimiento:</label>
-						        <br>
-						        <input type="date" id="inputfechavencimiento" class="form-control input-xlarge" placeholder="Elige una fecha de vencimiento" required autofocus autocomplete="off" name="fecha_vencimiento">
 
 						        <label > categoria:</label>
 						        <br>

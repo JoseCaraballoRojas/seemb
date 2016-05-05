@@ -34,6 +34,40 @@
 
 			}
 
+			//Funcion para leer un plato especifico.
+			public function Leer_plato($id_plato)
+			{
+				$consulta=new MySQL1();
+				$consulta->MySQL();
+				$resultado=$consulta->consultar("SELECT p.id_plato,p.id_unidad,p.id_tipo,p.plato,p.descripcion,p.porcion,p.calorias,p.carbohidratos,p.grasas,p.proteinas,p.azucares,p.sal, u.id_unidad, u.unidad,t.id_tipo, t.tipo FROM platos AS p JOIN unidades As u on p.id_unidad=u.id_unidad JOIN tipos As t on p.id_tipo=t.id_tipo WHERE p.id_plato='$id_plato'");
+				if($consulta->num_filas($resultado)>0)
+				    {
+				    	
+				    	return $resultado;
+				    }
+				else{
+						return false;
+					}
+
+			}
+
+			//Funcion para mostrar detalles de los ingredientes de un Plato.
+			public function Detalle_plato($id_plato)
+			{
+				$consulta=new MySQL1();
+				$consulta->MySQL();
+				$resultado=$consulta->consultar("SELECT p.producto,i.cantidad,u.unidad FROM ingredientes AS i JOIN productos As p on i.id_producto=p.id_producto JOIN unidades AS u on u.id_unidad=i.id_unidad WHERE i.id_plato='$id_plato'");
+				if($consulta->num_filas($resultado)>0)
+				    {
+				    	
+				    	return $resultado;
+				    }
+				else{
+						return false;
+					}
+
+			}
+
 			//Funcion para crear platos y almacenarlos en la base de datos ..
 			public function Crear($id_plato,$plato,$descripcion,$porcion,$unidad,$tipo,$calorias,$carbohidratos,$grasas,$proteinas,$azucares,$sal)
 			{
@@ -79,19 +113,19 @@
 			}
 
 			//Funcion para buscar los platos registrados en la base de datos.
-			public function Buscar($id_nutriente)
+			public function Buscar($id_plato)
 			{
 				$buscar=new MySQL1();
 				$buscar->MySQL();
 				
-				$resultado=$buscar->consultar("SELECT *FROM nutrientes WHERE id_nutriente='$id_nutriente' ");
+				$resultado=$buscar->consultar("SELECT *FROM platos WHERE id_plato='$id_plato' ");
 				if(($buscar->num_filas($resultado))>0){
 
 					return $resultado;
 					}
 
 				else{
-					$mensaje="El Nutriente con ese id no esta registrada en la base de datos";
+					$mensaje="El plato con ese id no esta registrado en la base de datos";
 					return $mensaje;
 					}
 			}
@@ -157,7 +191,7 @@
 			{
 				$consulta=new MySQL1();
 				$consulta->MySQL();
-				$resultado=$consulta->consultar("SELECT id_plato FROM platos");
+				$resultado=$consulta->consultar(" SELECT p.id_plato,p.plato,p.descripcion,p.porcion,u.unidad,p.calorias,p.carbohidratos,p.proteinas,p.grasas,p.azucares,p.sal,t.tipo FROM platos AS p JOIN unidades AS u ON p.id_unidad=u.id_unidad JOIN tipos AS t ON t.id_tipo=p.id_tipo  ");
 				if($consulta->num_filas($resultado)>0)
 				    {
 				    	

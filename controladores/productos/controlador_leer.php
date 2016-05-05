@@ -4,26 +4,7 @@ mysqli_report(0);
 //se incluye la clase conexion.
 include_once('../../modelos/Producto.php');
 
-// se verifica que se llamo a este controlador a traves de la vista correspondiente.
-/*if(isset($_POST['iniciarsesion']) && ($_POST['iniciarsesion']=="iniciar") )
-{
-    $usuario=$_POST['usuario'];
-    $password=$_POST['password'];
 
-    if($usuario=='' || $password=='' )
-    {
-      
-      ?>
-            <script type="text/javascript">
-                alert("debe ingresar un usuario y su contraseña");
-                window.location='../vistas/index.php';
-            </script>
-
-          <?php
-    }*/ //HABILITAR DESPUES POR SEGURIDAD.
-    
-   // else
-    //{
       $listar_productos= new Producto();
       $retorno=$listar_productos->Leer();
       echo "<section>
@@ -39,7 +20,6 @@ include_once('../../modelos/Producto.php');
               <th class='text-center'>ID</th>
               <th class='text-center'>PRODUCTO</th>
               <th class='text-center'>PRESENTACION</th>
-              <th class='text-center'>VENCIMIENTO</th>
               <th class='text-center'>CATEGORIA</th>
               <th class='text-center'>ACCIONES</th>
             </tr>
@@ -65,9 +45,6 @@ include_once('../../modelos/Producto.php');
                               ".$datos['presentacion']."
                           </td>
                           <td class='text-center'>
-                              ".$datos['fecha_vencimiento']."
-                          </td>
-                          <td class='text-center'>
                               ".$datos['categoria']."
                           </td>
                           <td class='text-center'> 
@@ -88,7 +65,5 @@ include_once('../../modelos/Producto.php');
           </tbody>
         </table> ";
         
-        //}            
-    //}      
-//}
+   
 ?>

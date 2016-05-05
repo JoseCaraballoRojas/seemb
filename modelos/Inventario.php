@@ -17,7 +17,7 @@
 			{
 				$consulta=new MySQL1();
 				$consulta->MySQL();
-				$resultado=$consulta->consultar("SELECT i.id_inventario,i.cantidad,i.fecha_entrada,i.nivel_optimo,i.id_producto,i.id_unidad,u.id_unidad,u.unidad,p.id_producto,p.producto FROM inventario AS i JOIN productos As p on i.id_producto=p.id_producto JOIN unidades As u on i.id_unidad=u.id_unidad");
+				$resultado=$consulta->consultar("SELECT i.id_inventario,i.cantidad,i.nivel_optimo,i.id_producto,i.id_unidad,u.id_unidad,u.unidad,p.id_producto,p.producto FROM inventario AS i JOIN productos As p on i.id_producto=p.id_producto JOIN unidades As u on i.id_unidad=u.id_unidad");
 				if($consulta->num_filas($resultado)>0)
 				    {
 				    	
@@ -30,13 +30,12 @@
 			}
 
 			//Funcion para crear productos y almacenarlas en la base de datos ..
-			public function Crear($cantidad,$fecha_entrada,$nivel_optimo,$producto,$unidad)
+			public function Crear($cantidad,$nivel_optimo,$producto,$unidad)
 			{
 				$crear=new MySQL1();
 				$crear->MySQL();
 				$this->_cantidad=$cantidad;
 				$this->_unidad=$unidad;
-				$this->_fecha_entrada=$fecha_entrada;
 				$this->_nivel_optimo=$nivel_optimo;
 				$this->_producto=$producto;
 				
@@ -51,7 +50,7 @@
 				}
 				else{
 					//si el producto no esta registrado en en el inventario se registra..	
-					if($crear->consultar("INSERT INTO inventario(cantidad,fecha_entrada,nivel_optimo,id_producto,id_unidad) VALUES('$this->_cantidad','$this->_fecha_entrada','$this->_nivel_optimo','$this->_producto','$this->_unidad')")){	
+					if($crear->consultar("INSERT INTO inventario(cantidad,nivel_optimo,id_producto,id_unidad) VALUES('$this->_cantidad','$this->_nivel_optimo','$this->_producto','$this->_unidad')")){	
 							//si todo se realizo correctamente se emite un mensaje
 							$mensaje="El producto se creo exitosamente en el inventario";
 							return $mensaje;
@@ -86,16 +85,15 @@
 			}
 
 			//funcion para actualizar el inventario almacenado en la base de datos.
-			public function Actualizar($id_inventario,$cantidad,$fecha_entrada,$nivel_optimo,$producto,$unidad){
+			public function Actualizar($id_inventario,$cantidad,$nivel_optimo,$producto,$unidad){
 				$actualizar= new MySQL1();
 				$actualizar->MySQL();
 				$this->_cantidad=$cantidad;
 				$this->_unidad=$unidad;
-				$this->_fecha_entrada=$fecha_entrada;
 				$this->_nivel_optimo=$nivel_optimo;
 				$this->_producto=$producto;
 				//se comprueba a ravez de una condicion si se ejecuta la actualizacion de la producto.
-				if($actualizar->consultar("UPDATE inventario set cantidad='$this->_cantidad', fecha_entrada='$this->_fecha_entrada', nivel_optimo='$this->_nivel_optimo',id_producto='$this->_producto', id_unidad='$this->_unidad'  WHERE id_inventario='$id_inventario'")){	
+				if($actualizar->consultar("UPDATE inventario set cantidad='$this->_cantidad', nivel_optimo='$this->_nivel_optimo',id_producto='$this->_producto', id_unidad='$this->_unidad'  WHERE id_inventario='$id_inventario'")){	
 					//si todo se realizo correctamente se emite un mensaje
 					$mensaje="El inventario se actualizo exitosamente";
 					return $mensaje;
@@ -147,16 +145,9 @@
 			{
 				$consulta=new MySQL1();
 				$consulta->MySQL();
-				$resultado=$consulta->consultar("SELECT *FROM inventario WHERE id_producto='$id_producto' and cantidad > '$cantidad'");
-				if($consulta->num_filas($resultado)>0)
-				    {
-				    	$resultado=TRUE;
-				    	return $resultado;
-				    }
-				else{
-						$resultado=FALSE;
-				    	return $resultado;
-					}
+				$resultado=$consulta->consultar("SELECT *FROM inventario WHERE id_producto=".$id_producto." AND cantidad >= ".$cantidad."");
+				$valor=$consulta->num_filas($resultado);
+				return $valor;
 
 			}
 

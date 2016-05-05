@@ -4,26 +4,6 @@ mysqli_report(0);
 //se incluye la clase conexion.
 include_once('../../modelos/Plato.php');
 
-// se verifica que se llamo a este controlador a traves de la vista correspondiente.
-/*if(isset($_POST['iniciarsesion']) && ($_POST['iniciarsesion']=="iniciar") )
-{
-    $usuario=$_POST['usuario'];
-    $password=$_POST['password'];
-
-    if($usuario=='' || $password=='' )
-    {
-      
-      ?>
-            <script type="text/javascript">
-                alert("debe ingresar un usuario y su contraseña");
-                window.location='../vistas/index.php';
-            </script>
-
-          <?php
-    }*/ //HABILITAR DESPUES POR SEGURIDAD.
-    
-   // else
-    //{
       $listar_platos= new Plato();
       $retorno=$listar_platos->Leer();
       echo "<section>
@@ -110,7 +90,5 @@ include_once('../../modelos/Plato.php');
           </tbody>
         </table> ";
         
-        //}            
-    //}      
-//}
+     
 ?>

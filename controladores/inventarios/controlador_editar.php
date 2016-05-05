@@ -6,7 +6,6 @@ $inventario="";
 $id="";
 $cantidad="";
 $nivel_optimo="";
-$fecha_entrada="";
 $producto="";
 if((empty($id_inventario) || strlen($id_inventario)<1) ){
 	$msgError="el id  del inventario es incorrecto";
@@ -23,7 +22,6 @@ else{
 			$cantidad=$datos['cantidad'];
 			$id=$datos['id_inventario'];
 			$nivel_optimo=$datos['nivel_optimo'];
-			$fecha_entrada=$datos['fecha_entrada'];
 			$producto=$datos['id_producto'];
 		} 
 	} 
@@ -55,13 +53,7 @@ echo "<form class='form-inline' method='POST' action='../controladores/inventari
 			    <br>
 			    <input type='text' id='inputniveloptimo' class='form-control input-xlarge' placeholder='Ingresa el Nivel Optimo' required autofocus autocomplete='off' name='nivel_optimo' value='$nivel_optimo'>
 			    </div>
-			    <br><br>
-			    <div class='col-md-5 input-group'>
-			    <label > Fecha de Entrada:</label>
-			    <br>
-			    <input type='date' id='inputfechaentrada' class='form-control input-xlarge' placeholder='Elige una fecha de Entrada' required autofocus autocomplete='off' name='fecha_entrada' value='$fecha_entrada'>
-				<br>
-				</div>
+			    
 			</div>
 			<div class='panel-footer'>
 				<div class='text-center'>

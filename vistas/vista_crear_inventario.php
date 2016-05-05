@@ -92,11 +92,7 @@ if(isset($_SESSION['usuario']) and ($_SESSION['tipo']=='ADMINISTRADOR'))
 						        <br>
 						        <input type="text" id="inputniveloptimo" class="form-control input-xlarge" placeholder="Ingresa el Nivel Optimo" required autofocus autocomplete="off" name="nivel_optimo">
 						        </div>
-						        <br><br>
-						        <label > Fecha de Entrada:</label>
-						        <br>
-						        <input type="date" id="inputfechaentrada" class="form-control input-xlarge" placeholder="Elige una fecha de Entrada" required autofocus autocomplete="off" name="fecha_entrada">
-								<br>
+						        
 							</div>
 							<div class="panel-footer">
 								<div class="text-center">

@@ -33,17 +33,14 @@ $usuario=$_SESSION['usuario'];
 				<li id="li_unidades">
 					<a href="vista_listar_unidades.php">Unidades</a>
 				</li>
-				<li id="li_nutrientes">
-					<a href="vista_listar_nutrientes.php">Nutrientes</a>
-				</li>
 				<li id="li_productos">
 					<a href="vista_listar_productos.php">Productos</a>
 				</li>
-				<li>
+				<li id="li_platos">
 					<a href="vista_listar_platos.php">Platos</a>
 				</li>
-				<li>
-					<a href="#">Menus</a>
+				<li id="li_menus">
+					<a href="vista_menu.php">Menus</a>
 				</li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">

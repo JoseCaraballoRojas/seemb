@@ -2,7 +2,12 @@
 header ("Cache-Control: no-cache, must-revalidate"); //no guardar en CACHE
 header ("Pragma: no-cache");
 @session_start();
-if(isset($_SESSION['usuario'])){	
+if(isset($_SESSION['usuario'])){
+include_once('../modelos/Historial.php');
+$usuarioh=$_SESSION['id_usuario'];
+$accion="Inicio de Sesion";
+$notifica= new Historial();
+$notifica->registra($usuarioh,$accion);	
 ?>
 <!DOCTYPE html>	
 <html lang="es">

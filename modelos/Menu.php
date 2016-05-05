@@ -14,11 +14,30 @@
 			private $_fecha_hora;
 			
 			//Funcion para leer los Platos guardados en la base de datos y retornarlos.
-			public function Menu_anterior($fecha_actual)
+			public function Menu_anterior($limite)
 			{
 				$consulta=new MySQL1();
 				$consulta->MySQL();
-				$resultado=$consulta->consultar("SELECT * FROM menu ORDER BY id_menu ASC LIMIT 1");
+				$resultado=$consulta->consultar("SELECT * FROM menu ORDER BY id_menu ASC LIMIT ".$limite."");
+				if($consulta->num_filas($resultado)>0)
+				    {
+				    	
+				    	return $resultado;
+				    }
+				else{
+						$resultado=0;
+						return $resultado;
+					}
+
+			}
+
+			
+			//Funcion para leer los Platos guardados en la base de datos y retornarlos.
+			public function Buscar_plato($id_plato,$tipo)
+			{
+				$consulta=new MySQL1();
+				$consulta->MySQL();
+				$resultado=$consulta->consultar(" SELECT p.plato,p.porcion,u.unidad,t.tipo,p.calorias,p.carbohidratos,p.proteinas,p.grasas,p.azucares,p.sal FROM platos as p join unidades as u on p.id_unidad=u.id_unidad join tipos as t on p.id_tipo=t.id_tipo WHERE p.id_plato='$id_plato' AND t.tipo='$tipo' ");
 				if($consulta->num_filas($resultado)>0)
 				    {
 				    	
@@ -30,7 +49,7 @@
 
 			}
 
-			
+
 			//Funcion para buscar los platos registrados en la base de datos.
 			public function Buscar($ci)
 			{

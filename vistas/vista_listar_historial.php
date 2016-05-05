@@ -2,31 +2,31 @@
 header ("Cache-Control: no-cache, must-revalidate"); //no guardar en CACHE
 header ("Pragma: no-cache");
 @session_start();
-if(isset($_SESSION['usuario']) and ($_SESSION['tipo']=='ESPECIALISTA'))
+if(isset($_SESSION['usuario']) AND ($_SESSION['tipo']=='ADMINISTRADOR'))
 {
   ?>
 <!DOCTYPE html>	
 <html lang="es">
 	<head>
 		<meta charset="utf-8">
-		<title>SEBCEMB</title>
+		<title>Seemb</title>
 		<link rel="stylesheet" type="text/css" href="../librerias/bootstrap/css/bootstrap.css">
 		<link rel="stylesheet" type="text/css" href="../publico/css/estilo-index.css">
 		<script src="../librerias/jquery-1.12.0.js"></script>
   		<script src="../librerias/bootstrap/js/bootstrap.min.js"></script>
   		<script>
   			$(document).ready(function(){
-				$.post("../controladores/platos/controlador_leer.php", {}, function(data){
+				$.post("../controladores/historial/controlador_leer.php", {}, function(data){
                 $("#contenido").html(data);
 
             	});
             	$(".nav li").removeClass("active");
-            	$("#li_platos").addClass('active');
+            	$("#li_historial").addClass('active');
 			});
   		</script>
   		<style type="text/css">
 			#contenido{
-						height: 450px;
+						height: 350px;
 						overflow-y:scroll;
 					  }
 			
@@ -40,7 +40,7 @@ if(isset($_SESSION['usuario']) and ($_SESSION['tipo']=='ESPECIALISTA'))
 					<!--<div class="page-header">-->
 					<header id="header-index">
 						<img src="default/img/header.jpg" class="img-responsive img-rounded img-banner">
-					</header><!--....header-->
+					</header> <!--....header-->
 					<!--</div>-->
 				</div>
 			</div>
@@ -52,7 +52,7 @@ if(isset($_SESSION['usuario']) and ($_SESSION['tipo']=='ESPECIALISTA'))
 				<div class="row">
 					<div class="col-md-12 ">
 					 	<!--MENU-->
-							<?php include_once("menu_especialista.php"); ?>
+							<?php include_once("menu_administrador.php"); ?>
 					 	<!--MENU-->
 					</div>	
 

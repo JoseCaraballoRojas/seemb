@@ -38,7 +38,6 @@ include_once('../../modelos/Inventario.php');
             <tr>
               <th class='text-center'>PRODUCTO</th>
               <th class='text-center'>CANTIDAD</th>
-              <th class='text-center'>ENTRADA</th>
               <th class='text-center'>NIVEL OPTIMO</th>
               <th class='text-center'>ACCIONES</th>
             </tr>
@@ -59,9 +58,6 @@ include_once('../../modelos/Inventario.php');
                           </td>
                           <td class='text-center'>
                               ".$datos['cantidad']." ".$datos['unidad']."
-                          </td>
-                          <td class='text-center'>
-                              ".$datos['fecha_entrada']."
                           </td>
                           <td class='text-center'>
                               ".$datos['nivel_optimo']."

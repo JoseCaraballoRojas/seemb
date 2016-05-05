@@ -4,6 +4,7 @@ header ("Pragma: no-cache");
 @session_start();
 if(isset($_SESSION['usuario']) and ($_SESSION['tipo']=='ESPECIALISTA'))
 {
+$id_plato=$_GET['id_plato'];
   ?>
 <!DOCTYPE html>	
 <html lang="es">
@@ -12,11 +13,13 @@ if(isset($_SESSION['usuario']) and ($_SESSION['tipo']=='ESPECIALISTA'))
 		<title>SEBCEMB</title>
 		<link rel="stylesheet" type="text/css" href="../librerias/bootstrap/css/bootstrap.css">
 		<link rel="stylesheet" type="text/css" href="../publico/css/estilo-index.css">
+		<link rel="stylesheet" type="text/css" href="../librerias/bootstrap/font-awesome/css/font-awesome.min.css">
 		<script src="../librerias/jquery-1.12.0.js"></script>
   		<script src="../librerias/bootstrap/js/bootstrap.min.js"></script>
   		<script>
   			$(document).ready(function(){
-				$.post("../controladores/platos/controlador_leer.php", {}, function(data){
+  				var id_recibido= $('#id_recibido').val();
+				$.post("../controladores/platos/controlador_detalle.php", { id_recibido: id_recibido}, function(data){
                 $("#contenido").html(data);
 
             	});
@@ -26,7 +29,7 @@ if(isset($_SESSION['usuario']) and ($_SESSION['tipo']=='ESPECIALISTA'))
   		</script>
   		<style type="text/css">
 			#contenido{
-						height: 450px;
+						height: 350px;
 						overflow-y:scroll;
 					  }
 			
@@ -61,6 +64,8 @@ if(isset($_SESSION['usuario']) and ($_SESSION['tipo']=='ESPECIALISTA'))
 					<div class="col-md-12">
 						<div id="contenido" class="col-md-12  table  ">
 							<!--qui se inserta lo que devuelve el controlador usando la funcion jquery-->
+
+							<input type='hidden' class='form-control' name='id_plato' value="<?php echo $id_plato ?>" id="id_recibido">
 						</div>
 					</div>
 				</div>

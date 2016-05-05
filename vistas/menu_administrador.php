@@ -26,20 +26,14 @@ $usuario=$_SESSION['usuario'];
 				<li id="li_tipos">
 					<a href="#">Seguridad</a>
 				</li>
-				<li id="li_unidades">
-					<a href="#">Historial</a>
+				<li id="li_histrorial">
+					<a href="vista_listar_historial.php">Historial</a>
 				</li>
 				<li id="li_inventario">
 					<a href="vista_listar_inventarios.php">Inventario</a>
 				</li>
-				<li id="li_productos">
-					<a href="vista_listar_productos.php">Productos</a>
-				</li>
-				<li>
-					<a href="#">Platos</a>
-				</li>
-				<li>
-					<a href="#">Menus</a>
+				<li id="li_menus">
+					<a href="vista_menu.php">Menus</a>
 				</li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">

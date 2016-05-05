@@ -2,8 +2,9 @@
 header ("Cache-Control: no-cache, must-revalidate"); //no guardar en CACHE
 header ("Pragma: no-cache");
 @session_start();
-if(isset($_SESSION['usuario']) and ($_SESSION['tipo']=='ESPECIALISTA'))
+if(isset($_SESSION['usuario']) and (($_SESSION['tipo']=='ESPECIALISTA')) || ($_SESSION['tipo']=='ADMINISTRADOR')) 
 {
+
   ?>
 <!DOCTYPE html>	
 <html lang="es">
@@ -12,22 +13,24 @@ if(isset($_SESSION['usuario']) and ($_SESSION['tipo']=='ESPECIALISTA'))
 		<title>SEBCEMB</title>
 		<link rel="stylesheet" type="text/css" href="../librerias/bootstrap/css/bootstrap.css">
 		<link rel="stylesheet" type="text/css" href="../publico/css/estilo-index.css">
+		<link rel="stylesheet" type="text/css" href="../librerias/bootstrap/font-awesome/css/font-awesome.min.css">
 		<script src="../librerias/jquery-1.12.0.js"></script>
   		<script src="../librerias/bootstrap/js/bootstrap.min.js"></script>
   		<script>
   			$(document).ready(function(){
-				$.post("../controladores/platos/controlador_leer.php", {}, function(data){
+  				var id_recibido= $('#id_recibido').val();
+				$.post("../inferencia/control.php", {}, function(data){
                 $("#contenido").html(data);
 
             	});
             	$(".nav li").removeClass("active");
-            	$("#li_platos").addClass('active');
+            	$("#li_menus").addClass('active');
 			});
   		</script>
   		<style type="text/css">
 			#contenido{
 						height: 450px;
-						overflow-y:scroll;
+						/*overflow-y:scroll;*/
 					  }
 			
   		</style>
@@ -61,6 +64,7 @@ if(isset($_SESSION['usuario']) and ($_SESSION['tipo']=='ESPECIALISTA'))
 					<div class="col-md-12">
 						<div id="contenido" class="col-md-12  table  ">
 							<!--qui se inserta lo que devuelve el controlador usando la funcion jquery-->
+
 						</div>
 					</div>
 				</div>

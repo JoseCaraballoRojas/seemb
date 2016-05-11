@@ -2,10 +2,12 @@
 #section-index{
 	background-color: #FDEAE8;
 	border-radius: 5px;
+	margin-top: -18px;
 }
 
 #body-index{
 	background-color: #E4E4E4;
+
 
 	}
 .img-banner{
@@ -18,7 +20,8 @@
 #img-logo
 {
 	margin-left: 20%;
-	margin-top: 5%;
+	margin-top: 1%;
+	margin-bottom: 1%;
 }
 
 .pie{

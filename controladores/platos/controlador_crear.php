@@ -55,7 +55,7 @@ else{
 		}
 		// si todo el proceso se dio exitosamente se emite un mensaje y nos manda a los platos registrados
 		echo "<script  type='text/javascript' charset='utf-8' >alert('$mensaje');
-		window.location.assign('../../vistas/inicio.php');
+		window.location.assign('../../vistas/vista_listar_platos.php');
 		</script>";		 
 	}
 

@@ -4,48 +4,34 @@ mysqli_report(0);
 //se incluye la clase conexion.
 include_once('../../modelos/Categoria.php');
 
-// se verifica que se llamo a este controlador a traves de la vista correspondiente.
-/*if(isset($_POST['iniciarsesion']) && ($_POST['iniciarsesion']=="iniciar") )
-{
-    $usuario=$_POST['usuario'];
-    $password=$_POST['password'];
-
-    if($usuario=='' || $password=='' )
-    {
-      
-      ?>
-            <script type="text/javascript">
-                alert("debe ingresar un usuario y su contraseña");
-                window.location='../vistas/index.php';
-            </script>
-
-          <?php
-    }*/ //HABILITAR DESPUES POR SEGURIDAD.
-    
-   // else
-    //{
       $listar_categorias= new Categoria();
       $retorno=$listar_categorias->leer();
       echo "<section>
-            <span class='text-center'><h2>categorias Registradas</h2>
+            <span class='text-center'><h2>Categorias Registradas</h2>
             <a href='vista_crear_categoria.php' class='btn btn-success pull-right'>
                 <span class='glyphicon glyphicon-plus-sign'> Crear</span>
             </a>
             </section>";
       echo "
-        <table class='table table-bordered  table-hover table-condensed table-striped'>
+        <table class='table table-bordered  table-hover table-condensed table-striped' class='display' id='tablas'>
           <thead >
             <tr>
-              <th class='text-center'>ID</th>
-              <th class='text-center'>CATEGORIA</th>
-              <th class='text-center'>DETALLE</th>
-              <th class='text-center'>ACCIONES</th>
+              <th class='text-center'>Categoria</th>
+              <th class='text-center'>Detalle</th>
+              <th class='text-center'>Acciones</th>
             </tr>
           </thead>
+          <tfoot >
+            <tr>
+              <th class='text-center'>Categoria</th>
+              <th class='text-center'>Detalle</th>
+              <th class='text-center'>Acciones</th>
+            </tr>
+          </tfoot>
           <tbody>";
       if (empty($retorno)){
           echo "<div class='alert alert-info'>
-                 <strong>Informacion</strong> No hay categorias Registradas.
+                 <strong>Informacion</strong> No hay categorias registradas.
                </div>";
         }
       else{
@@ -53,9 +39,6 @@ include_once('../../modelos/Categoria.php');
               foreach($retorno as $datos){
       
                 echo "<tr> 
-                          <td class='text-center'>
-                              ".$datos['id_categoria']."
-                          </td>
                           <td>
                               ".$datos['categoria']."
                           </td>
@@ -67,7 +50,7 @@ include_once('../../modelos/Categoria.php');
                               <a href='vista_editar_categoria.php?id_categoria=".$datos['id_categoria']."' class='btn btn-primary btn-sm '>
                               <span class='glyphicon glyphicon-pencil'> Editar</span>
                               </a>
-                              <a href='../controladores/categorias/controlador_borrar.php?id_categoria=".$datos['id_categoria']."' class='btn btn-danger btn-sm'>
+                              <a href='#' onClick='confirmar(".$datos['id_categoria'].")' class='btn btn-danger btn-sm' onclick='return confirmar('¿Está seguro que desea eliminar el registro?')'>
                               <span class='glyphicon glyphicon-trash'> Borrar</span>
                               </a>
 
@@ -80,7 +63,4 @@ include_once('../../modelos/Categoria.php');
           </tbody>
         </table> ";
         
-        //}            
-    //}      
-//}
 ?>

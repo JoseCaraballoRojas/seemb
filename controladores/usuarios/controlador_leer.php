@@ -31,7 +31,14 @@ include_once('../../modelos/Usuario.php');
       else{
             
               foreach($retorno as $datos){
-      
+                $act="";
+                $des="";
+                if ($datos['estatus']=='INACTIVO') {
+                  $act='disabled';
+                }
+                elseif ($datos['estatus']=='ACTIVO') {
+                  $des='disabled';
+                }
                 echo "<tr> 
                           <td class='text-center'>
                               ".$datos['usuario']."
@@ -47,10 +54,10 @@ include_once('../../modelos/Usuario.php');
                               <a href='vista_editar_usuario.php?id_usuario=".$datos['id_usuario']."' class='btn btn-primary btn-sm '>
                               <span class='glyphicon glyphicon-pencil'> Editar</span>
                               </a>
-                              <a href='../controladores/usuarios/controlador_desactivar.php?id_usuario=".$datos['id_usuario']."' class='btn btn-danger btn-sm'>
+                              <a href='../controladores/usuarios/controlador_desactivar.php?id_usuario=".$datos['id_usuario']."' class='btn btn-danger btn-sm ".$act."'>
                               <span class='glyphicon glyphicon-trash'> Desactivar</span>
                               </a>
-                              <a href='../controladores/usuarios/controlador_activar.php?id_usuario=".$datos['id_usuario']."' class='btn btn-success btn-sm'>
+                              <a href='../controladores/usuarios/controlador_activar.php?id_usuario=".$datos['id_usuario']."' class='btn btn-success btn-sm ".$des."'>
                               <span class='glyphicon glyphicon-trash'> Activar</span>
                               </a>
                           </td>

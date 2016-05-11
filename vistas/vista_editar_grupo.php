@@ -11,7 +11,7 @@ $id_grupo=$_GET['id_grupo'];
 <html lang="es">
 	<head>
 		<meta charset="utf-8">
-		<title>Seemb</title>
+		<title>SEBCEMB</title>
 		<link rel="stylesheet" type="text/css" href="../librerias/bootstrap/css/bootstrap.css">
 		<link rel="stylesheet" type="text/css" href="../librerias/bootstrap/font-awesome/css/font-awesome.min.css">
 		<link rel="stylesheet" type="text/css" href="../publico/css/estilo-index.css">
@@ -38,7 +38,7 @@ $id_grupo=$_GET['id_grupo'];
 	</head>
 	<body id="body-index">
 			<br>
-		<div class="container">
+		<div class="container-fluid">
 			<div class="row">
 				<div class="col-md-12" >
 					<!--<div class="page-header">-->
@@ -51,7 +51,7 @@ $id_grupo=$_GET['id_grupo'];
 		</div>
 		
 		
-		<div class="container">
+		<div class="container-fluid">
 			<section id="section-index">
 				<div class="row">
 					<div class="col-md-12 ">
@@ -72,7 +72,7 @@ $id_grupo=$_GET['id_grupo'];
 			</div>
 			
 		
-			<div class="container">
+			<div class="container-fluid">
 				<div class="row">
 					<div class="col-md-12">
 						<!--FOOTER-->

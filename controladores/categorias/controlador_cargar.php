@@ -10,7 +10,7 @@ include_once('../../modelos/Categoria.php');
                </div>";
         }
       else{
-              $html= '<option >Seleccione... </option>';
+              
               foreach($retorno as $datos){
                     $html.= '<option value='.$datos['id_categoria'].'> '.$datos['categoria'].'</option>';
                   }

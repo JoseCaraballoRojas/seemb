@@ -16,12 +16,13 @@ $notifica->registra($usuarioh,$accion);
 		<title>SEBCEMB</title>
 		<link rel="stylesheet" type="text/css" href="../librerias/bootstrap/css/bootstrap.css">
 		<link rel="stylesheet" type="text/css" href="../publico/css/estilo-index.css">
+		<link rel="stylesheet" type="text/css" href="../librerias/bootstrap/font-awesome/css/font-awesome.min.css">
 		<script src="../librerias/jquery-1.12.0.js"></script>
   		<script src="../librerias/bootstrap/js/bootstrap.min.js"></script>
 
 	</head>
 	<body id="body-index">
-		<div class="container">
+		<div class="container-fluid">
 			<div class="row">
 				<div class="col-md-12 " id="header_index" >
 					<!--HEADER-->
@@ -31,7 +32,7 @@ $notifica->registra($usuarioh,$accion);
 				</div>
 			</div>
 		</div>
-		<div class="container">
+		<div class="container-fluid">
 			<div class="row">
 				<div class="col-md-12 ">
 				 	<!--MENU-->
@@ -49,16 +50,16 @@ $notifica->registra($usuarioh,$accion);
 				</div>	
 			</div>
 		</div>
-		<div class="container" >
+		<div class="container-fluid" >
 			<div id="section-index"><!--SECTION-->
-				<div class="row">
+				<div class="row" >
 					<div class="col-md-12 ">
 			 			<img src="../publico/img/logo.jpg" class="img-responsive img-rounded" id="img-logo">
 					</div>	
 				</div>
 			</div> <!--SECTION-->
 		</div>
-		<div class="container">
+		<div class="container-fluid">
 			<div class="row">
 				<div class="col-md-12">
 					<!--FOOTER-->

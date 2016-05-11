@@ -34,24 +34,15 @@ echo "<form class='form-inline' method='POST' action='../controladores/inventari
 			<div class='panel-body'>		
 			
 					<div class='col-md-5 input-group'>		 		
-			    <label > Producto:</label>
-			    <br>
-			    <select name='producto' id='selectproducto' class='form-control' required>
-			    	
-			    </select>
-			    </div>
-			    <br><br>
+			   
 			    <label > Cantidad:</label>
 			    <br>
-			    <input type='text' id='inputcantidad' class='form-control input-xlarge' placeholder='Cantidad del Producto ' required autofocus autocomplete='off' name='cantidad' value='$cantidad'>					      					
-			    <select name='unidad' id='selectunidad' class='form-control' required>
-			    	
-			    </select>
-			    <br><br>
+			    <input type='text' id='inputcantidad' class='form-control input-xlarge' placeholder='Cantidad del Producto ' required utocomplete='off' name='cantidad' value='$cantidad'>				
+			    <br>	      						
 			  	<div class='col-md-5 input-group'>	
 			    <label > Nivel Optimo:</label>
 			    <br>
-			    <input type='text' id='inputniveloptimo' class='form-control input-xlarge' placeholder='Ingresa el Nivel Optimo' required autofocus autocomplete='off' name='nivel_optimo' value='$nivel_optimo'>
+			    <input type='text' id='inputniveloptimo' class='form-control input-xlarge' placeholder='Ingresa el Nivel Optimo' required  autocomplete='off' name='nivel_optimo' value='$nivel_optimo'>
 			    </div>
 			    
 			</div>
@@ -59,7 +50,7 @@ echo "<form class='form-inline' method='POST' action='../controladores/inventari
 				<div class='text-center'>
 					<a class='btn  btn-info ' href='vista_listar_inventarios.php' ><span class='fa fa-reply'>  Atras</span></a>
 					<button class='btn  btn-danger ' type='reset' name='cancelar' value='borrar' ><span class='glyphicon glyphicon-remove'> Borrar</span></button>
-					<button class='btn  btn-success ' type='submit' name='crear' value='crear' ><span class='glyphicon glyphicon-floppy-disk'> Crear</span></button>
+					<button class='btn  btn-success ' type='submit' name='crear' value='crear' ><span class='glyphicon glyphicon-floppy-disk'> Actualizar</span></button>
 				</div>
 				<div>
 					<input type='hidden' class='form-control' name='id_inventario' value='$id'>

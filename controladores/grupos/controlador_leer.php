@@ -27,25 +27,24 @@ include_once('../../modelos/Grupo.php');
       $listar_grupos= new Grupo();
       $retorno=$listar_grupos->Leer();
       echo "<section>
-            <span class='text-center'><h2>Grupos Alimenticios Registrados</h2>
+            <span class='text-center'><h3>Grupos alimenticios registrados</h3>
             <a href='vista_crear_grupo.php' class='btn btn-success pull-right'>
                 <span class='glyphicon glyphicon-plus-sign'> Crear</span>
             </a>
             </section>";
       echo "
-        <table class='table table-bordered  table-hover table-condensed table-striped'>
+        <table class='table table-bordered  table-hover table-condensed table-striped' class='display' id='tablas'>
           <thead >
             <tr>
-              <th class='text-center'>ID</th>
-              <th class='text-center'>GRUPO</th>
-              <th class='text-center'>PRIORIDAD</th>
-              <th class='text-center'>ACCIONES</th>
+              <th class='text-center'>Grupo</th>
+              <th class='text-center'>prioridad</th>
+              <th class='text-center'>Acciones</th>
             </tr>
           </thead>
           <tbody>";
       if (empty($retorno)){
           echo "<div class='alert alert-info'>
-                 <strong>Informacion</strong> No hay Grupos Registrados.
+                 <strong>Informacion</strong> No hay grupos registrados.
                </div>";
         }
       else{
@@ -53,9 +52,6 @@ include_once('../../modelos/Grupo.php');
               foreach($retorno as $datos){
       
                 echo "<tr> 
-                          <td class='text-center'>
-                              ".$datos['id_grupo']."
-                          </td>
                           <td>
                               ".$datos['grupo']."
                           </td>

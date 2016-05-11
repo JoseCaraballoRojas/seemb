@@ -13,12 +13,12 @@ include_once('../../modelos/Plato.php');
         <table class='table table-bordered  table-hover table-condensed table-striped'>
           <thead >
             <tr class='btn-danger'>
-            <th colspan='6' class='text-center'><h2> <b>Detalles del Plato</h2></th>
+            <th colspan='6' class='text-center'><h3> <b>Detalles del plato</h3></th>
             </tr>
             <tr class='btn-primary'>
-              <th colspan='1' class='text-center'>PLATO</th>
-              <th class='text-center' colspan='4'>DESCRIPCION</th>
-              <th class='text-center' colspan='1'>PORCION</th>
+              <th colspan='1' class='text-center'>Plato</th>
+              <th class='text-center' colspan='4'>Descripción</th>
+              <th class='text-center' colspan='1'>Porción</th>
             </tr>";
             foreach($detalle as $datos){
       
@@ -37,8 +37,8 @@ include_once('../../modelos/Plato.php');
               }
       echo " 
             <tr class='btn-success'>
-              <th colspan='3' class='text-center'>INGREDIENTES</th>
-              <th class='text-center' colspan='3'>CANIDAD</th>
+              <th colspan='3' class='text-center'>Ingredientes</th>
+              <th class='text-center' colspan='3'>Cantidad</th>
             </tr>
           </thead>
           <tbody>";
@@ -67,12 +67,12 @@ include_once('../../modelos/Plato.php');
               <th colspan='6' class='text-center' > INFORMACION NUTRICIONAL </th>
           </tr>
           <tr>
-            <th class='text-center'>ENERGIA (Kcal)</th>
-            <th class='text-center'>CARBOHIDRATOS (g)</th>
-            <th class='text-center'>PROTEINAS (g)</th>
+            <th class='text-center'>Energía (Kcal)</th>
+            <th class='text-center'>Carbohidratos (g)</th>
+            <th class='text-center'>Proteínas (g)</th>
             <th class='text-center'>GRASAS (g)</th>
-            <th class='text-center'>AZUCARES (g)</th>
-            <th class='text-center'>SAL (g)</th>
+            <th class='text-center'>Azúcares (g)</th>
+            <th class='text-center'>Sal (g)</th>
           </tr>";
   
 foreach($plato as $datos){
@@ -104,7 +104,7 @@ foreach($plato as $datos){
           <tr>
               <td class='text-center' colspan='6'>               
                 <a href='vista_listar_platos.php' class='btn btn-primary btn-block '>
-                <span class='fa fa-reply'> Regresar</span>
+                <span class='fa fa-reply'> Atrás</span>
                 </a>
               </td>
           </tr>

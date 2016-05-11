@@ -15,7 +15,7 @@
 			{
 				$consulta=new MySQL1();
 				$consulta->MySQL();
-				$resultado=$consulta->consultar("SELECT p.id_producto, p.producto, p.presentacion, p.id_categoria, p.id_categoria, c.id_categoria, c.categoria FROM categoria AS c JOIN productos As p on p.id_categoria=c.id_categoria");
+				$resultado=$consulta->consultar("SELECT p.id_producto, p.producto, p.presentacion, p.id_categoria, p.id_categoria, c.id_categoria, c.categoria FROM categoria AS c JOIN productos As p on p.id_categoria=c.id_categoria ORDER BY p.producto");
 				if($consulta->num_filas($resultado)>0)
 				    {
 				    	
@@ -86,7 +86,6 @@
 				$actualizar->MySQL();
 				$this->_producto=$producto;
 				$this->_presentacion=$presentacion;
-				$this->_fecha_vencimiento=$fecha_vencimiento;
 				$this->_categoria=$categoria;
 				//se comprueba a ravez de una condicion si se ejecuta la actualizacion de la producto.
 				if($actualizar->consultar("UPDATE productos set producto='$this->_producto', presentacion='$this->_presentacion', id_categoria='$this->_categoria'  WHERE id_producto='$id_producto'")){	

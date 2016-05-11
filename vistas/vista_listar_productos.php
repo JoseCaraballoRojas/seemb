@@ -9,16 +9,41 @@ if(isset($_SESSION['usuario']))
 <html lang="es">
 	<head>
 		<meta charset="utf-8">
-		<title>Seemb</title>
+		<title>SEBCEMB</title>
 		<link rel="stylesheet" type="text/css" href="../librerias/bootstrap/css/bootstrap.css">
 		<link rel="stylesheet" type="text/css" href="../publico/css/estilo-index.css">
+		<link rel="stylesheet" type="text/css" href="../librerias/datatables/media/css/jquery.dataTables.css">
 		<script src="../librerias/jquery-1.12.0.js"></script>
+		<script src="../librerias/datatables/media/js/jquery.dataTables.js"></script>
   		<script src="../librerias/bootstrap/js/bootstrap.min.js"></script>
   		<script>
   			$(document).ready(function(){
 				$.post("../controladores/productos/controlador_leer.php", {}, function(data){
                 $("#contenido").html(data);
-
+                $("#tablas").DataTable( {
+									    language: {
+									        processing:     "Cargando...",
+									        search:         "Filtro:",
+									        lengthMenu:    "Mostrar _MENU_ Registros",
+									        info:           "Hay de _START_ a _END_   resgistros mostrados de _TOTAL_ en total",
+									        infoEmpty:      "No hay registros disponibles",
+									        infoFiltered:   "(Hay  _MAX_ Registros en total )",
+									        infoPostFix:    "",
+									        loadingRecords: "Chargement en cours...",
+									        zeroRecords:    "Aucun &eacute;l&eacute;ment &agrave; afficher",
+									        emptyTable:     "Aucune donnée disponible dans le tableau",
+									        paginate: {
+									            first:      "Primera",
+									            previous:   "< Anterior",
+									            next:       "Siguiente >",
+									            last:       "Ultima"
+									        },
+									        aria: {
+									            sortAscending:  ": habilitado para ordenar la columna en orden ascendente",
+									            sortDescending: ": habilitado para ordenar la columna en orden descendente"
+									        }
+									    }
+									});
             	});
             	$(".nav li").removeClass("active");
             	$("#li_productos").addClass('active');
@@ -26,7 +51,7 @@ if(isset($_SESSION['usuario']))
   		</script>
   		<style type="text/css">
 			#contenido{
-						height: 350px;
+						height: 450px;
 						overflow-y:scroll;
 					  }
 			
@@ -34,7 +59,7 @@ if(isset($_SESSION['usuario']))
 	</head>
 	<body id="body-index">
 		<br>
-		<div class="container">
+		<div class="container-fluid">
 			<div class="row">
 				<div class="col-md-12" >
 					<!--<div class="page-header">-->
@@ -47,7 +72,7 @@ if(isset($_SESSION['usuario']))
 		</div>
 		
 		
-		<div class="container">
+		<div class="container-fluid">
 			<section id="section-index">
 				<div class="row">
 					<div class="col-md-12 ">
@@ -68,7 +93,7 @@ if(isset($_SESSION['usuario']))
 			</div>
 		
 		
-			<div class="container ">
+			<div class="container-fluid ">
 				<div class="row ">
 					<div class="col-md-12">
 						<!--FOOTER-->

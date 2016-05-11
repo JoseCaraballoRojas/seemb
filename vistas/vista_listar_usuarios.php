@@ -22,7 +22,7 @@ $usuario=$_SESSION['usuario'];
 
               });
               $(".nav li").removeClass("active");
-              $("#li_grupos").addClass('active');
+              $("#li_usuarios").addClass('active');
       });
       </script>
       <style type="text/css">
@@ -34,7 +34,7 @@ $usuario=$_SESSION['usuario'];
   </head>
   <body id="body-index">
     <br>
-    <div class="container">
+    <div class="container-fluid">
       <div class="row">
         <div class="col-md-12 " id="header_index">
           <header id="header-index">
@@ -45,7 +45,7 @@ $usuario=$_SESSION['usuario'];
     </div>
     
     
-    <div class="container">
+    <div class="container-fluid">
       
         <div class="row">
           <div class="col-md-12 " >
@@ -56,7 +56,7 @@ $usuario=$_SESSION['usuario'];
 
         </div>
         </div>
-        <div class="container" id="section-index">
+        <div class="container-fluid" id="section-index">
         <div class="row" >
           <div class="col-md-12" >
             <div id="contenido" class="col-md-12  table  " >
@@ -69,7 +69,7 @@ $usuario=$_SESSION['usuario'];
       
     
     
-      <div class="container">
+      <div class="container-fluid">
         <div class="row">
           <div class="col-md-12">
             <!--FOOTER-->

@@ -153,33 +153,33 @@
 				$actualizar->desconectar();
 			}
 
-			// funcion para borrar Nutrientes registrados en la base de datos.
-			public function Borrar($id_nutriente)
+			// funcion para borrar Platos registrados en la base de datos.
+			public function Borrar($id_plato)
 			{
 				
 				$borrar=new MySQL1();
 				$borrar->MySQL();
 				
-				//se consulta la base de datos para saber si el nutriente existe.
-				$query=$borrar->consultar("SELECT *FROM nutrientes WHERE id_nutriente='$id_nutriente'");
+				//se consulta la base de datos para saber si el plato existe.
+				$query=$borrar->consultar("SELECT *FROM platos WHERE id_plato='$id_plato'");
 				//se comprueba el resultado de la consulta.
 				if(($borrar->num_filas($query))<1)
 				{	//si no encuentra nada emite un mensaje
-					$mensaje="El Nutriente no Existe en la Base de Datos";
+					$mensaje="El plato no Existe en la Base de Datos";
 					return $mensaje;
 				}
 
-				//se usa una condicion para determinar si el nutriente se borro de la base de datos.
-				if($borrar->consultar("DELETE FROM nutrientes WHERE id_nutriente='$id_nutriente'"))
+				//se usa una condicion para determinar si el plato se borro de la base de datos.
+				if($borrar->consultar("DELETE FROM platos WHERE id_plato='$id_plato'"))
 				{
 					//si todo se realizo correctamente se emite un mensaje
-					$mensaje="El Nutriente Se Borro Exitosamente";
+					$mensaje="El Plato Se Borro Exitosamente";
 					return $mensaje;
 				}
 				else
 				{	
 					//mensaje si ha ocurrido un error
-					$mensaje="Error al  borrar el nutriente";
+					$mensaje="Error al  borrar el Plato";
 					return  $mensaje;
 				}
 				//se cierra la conexion a la base de datos
@@ -191,7 +191,7 @@
 			{
 				$consulta=new MySQL1();
 				$consulta->MySQL();
-				$resultado=$consulta->consultar(" SELECT p.id_plato,p.plato,p.descripcion,p.porcion,u.unidad,p.calorias,p.carbohidratos,p.proteinas,p.grasas,p.azucares,p.sal,t.tipo FROM platos AS p JOIN unidades AS u ON p.id_unidad=u.id_unidad JOIN tipos AS t ON t.id_tipo=p.id_tipo  ");
+				$resultado=$consulta->consultar("SELECT p.id_plato,p.plato,p.descripcion,p.porcion,u.unidad,p.calorias,p.carbohidratos,p.proteinas,p.grasas,p.azucares,p.sal,t.tipo FROM platos AS p JOIN unidades AS u ON p.id_unidad=u.id_unidad JOIN tipos AS t ON t.id_tipo=p.id_tipo");
 				if($consulta->num_filas($resultado)>0)
 				    {
 				    	

@@ -10,7 +10,7 @@ if(isset($_SESSION['usuario']))
 <html lang="es">
 	<head>
 		<meta charset="utf-8">
-		<title>Seemb</title>
+		<title>SEBCEMB</title>
 		<link rel="stylesheet" type="text/css" href="../librerias/bootstrap/css/bootstrap.css">
 		<link rel="stylesheet" type="text/css" href="../librerias/bootstrap/font-awesome/css/font-awesome.min.css">
 		<link rel="stylesheet" type="text/css" href="../publico/css/estilo-index.css">
@@ -28,7 +28,7 @@ if(isset($_SESSION['usuario']))
   		<script>
   			$(document).ready(function(){
 				$.post("../controladores/categorias/controlador_cargar.php", {}, function(data){
-               $("#selectcategoria").html('<option>Seleccione...</option>');
+               
                 $("#selectcategoria").append(data);
 
             	});

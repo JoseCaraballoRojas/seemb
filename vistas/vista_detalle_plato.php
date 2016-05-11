@@ -37,7 +37,7 @@ $id_plato=$_GET['id_plato'];
 	</head>
 	<body id="body-index">
 		<br>
-		<div class="container">
+		<div class="container-fluid">
 			<div class="row">
 				<div class="col-md-12" >
 					<!--<div class="page-header">-->
@@ -50,7 +50,7 @@ $id_plato=$_GET['id_plato'];
 		</div>
 		
 		
-		<div class="container">
+		<div class="container-fluid">
 			<section id="section-index">
 				<div class="row">
 					<div class="col-md-12 ">
@@ -73,7 +73,7 @@ $id_plato=$_GET['id_plato'];
 			</div>
 		
 		
-			<div class="container ">
+			<div class="container-fluid ">
 				<div class="row ">
 					<div class="col-md-12">
 						<!--FOOTER-->

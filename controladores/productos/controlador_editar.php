@@ -49,7 +49,7 @@ echo"
 	<br>
 	<br>
 	<div class='text-center'>
-		<a class='btn  btn-info' href='listar.php' ><span class='fa fa-reply'> Atras</span></a>
+		<a class='btn  btn-info' href='vista_listar_productos.php' ><span class='fa fa-reply'> Atras</span></a>
 		<button class='btn  btn-danger' type='reset' name='cancelar'  ><span class='glyphicon glyphicon-remove'> Borrar</span></button>
 		<button class='btn  btn-success' type='submit' name='actualizar' ><span class='glyphicon glyphicon-floppy-disk'> Actualizar</span></button>
 	</div>

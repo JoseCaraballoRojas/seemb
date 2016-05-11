@@ -27,19 +27,19 @@ include_once('../../modelos/Inventario.php');
       $listar_inventarios= new Inventario();
       $retorno=$listar_inventarios->Leer();
       echo "<section>
-            <span class='text-center'><h2>Inventario Disponible</h2>
+            <span class='text-center'><h2>Inventario disponible</h2>
             <a href='vista_crear_inventario.php' class='btn btn-success pull-right'>
                 <span class='glyphicon glyphicon-plus-sign'> Crear</span>
             </a>
             </section>";
       echo "
-        <table class='table table-bordered  table-hover table-condensed table-striped'>
+        <table class='table table-bordered  table-hover table-condensed table-striped' class='display' id='tablas'>
           <thead >
             <tr>
-              <th class='text-center'>PRODUCTO</th>
-              <th class='text-center'>CANTIDAD</th>
-              <th class='text-center'>NIVEL OPTIMO</th>
-              <th class='text-center'>ACCIONES</th>
+              <th class='text-center'>Producto</th>
+              <th class='text-center'>Cantidad</th>
+              <th class='text-center'>Nivel optimo</th>
+              <th class='text-center'>Acciones</th>
             </tr>
           </thead>
           <tbody>";

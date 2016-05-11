@@ -1,7 +1,7 @@
 <?php
 include("../../modelos/Grupo.php");
 
-$grupo=$_POST['grupo'];
+$grupo=ucfirst($_POST['grupo']);
 $prioridad=$_POST['prioridad'];
 
 

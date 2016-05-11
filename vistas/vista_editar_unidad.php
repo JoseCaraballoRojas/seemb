@@ -38,7 +38,7 @@ $id_unidad=$_GET['id_unidad'];
 	</head>
 	<body id="body-index">
 			<br>
-		<div class="container">
+		<div class="container-fluid">
 			<div class="row">
 				<div class="col-md-12" >
 					<!--<div class="page-header">-->
@@ -51,7 +51,7 @@ $id_unidad=$_GET['id_unidad'];
 		</div>
 		
 		
-		<div class="container">
+		<div class="container-fluid">
 			<section id="section-index">
 				<div class="row">
 					<div class="col-md-12 ">
@@ -72,7 +72,7 @@ $id_unidad=$_GET['id_unidad'];
 			</div>
 			
 		
-			<div class="container">
+			<div class="container-fluid">
 				<div class="row">
 					<div class="col-md-12">
 						<!--FOOTER-->

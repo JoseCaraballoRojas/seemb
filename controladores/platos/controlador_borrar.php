@@ -1,22 +1,22 @@
 <?php
 //se incluye la clase 
-include("../../modelos/Producto.php");
+include("../../modelos/Plato.php");
 
-$id_producto=$_GET['id_producto'];
+$id_plato=$_GET['id_plato'];
 
-if((empty($id_producto)) || (strlen($id_producto)<1) ){
-	$msgError="el id  de la producto es incorrecto";
+if((empty($id_plato)) || (strlen($id_plato)<1) ){
+	$msgError="el id  del plato es incorrecto";
 	echo "<script  type='text/javascript' charset='utf-8' >alert('$msgError');
-		window.location.assign('../../vistas/vista_listar_productos.php');
+		window.location.assign('../../vistas/vista_listar_platos.php');
 		</script>";	
 }
 else{
 
-		$borrar_producto= new Producto();
+		$borrar_plato= new Plato();
 
-		$mensaje=$borrar_producto->Borrar($id_producto);
+		$mensaje=$borrar_plato->Borrar($id_plato);
 		echo "<script  type='text/javascript' charset='utf-8' >alert('$mensaje');
-		window.location.assign('../../vistas/vista_listar_productos.php');
+		window.location.assign('../../vistas/vista_listar_platos.php');
 		</script>";		 
 	} 
 

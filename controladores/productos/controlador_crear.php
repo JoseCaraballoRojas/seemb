@@ -2,8 +2,8 @@
 //se incluye la clase producto
 include_once("../../modelos/Producto.php");
 
-$producto=$_POST['producto'];
-$presentacion=$_POST['presentacion'];
+$producto=ucfirst($_POST['producto']);
+$presentacion=ucfirst($_POST['presentacion']);
 $categoria=$_POST['categoria'];
 
 if((empty($producto)) || (empty($presentacion))  || (empty($categoria)) ){

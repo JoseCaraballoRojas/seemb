@@ -5,10 +5,10 @@ include_once("../../modelos/Usuario.php");
 
 //se reciben los datos del formulario y se almacenan en variables
 $ci=$_POST['cedula'];
-$primer_nombre=$_POST['primer_nombre'];
-$segundo_nombre=$_POST['segundo_nombre'];
-$primer_apellido=$_POST['primer_apellido'];
-$segundo_apellido=$_POST['segundo_apellido'];
+$primer_nombre=ucfirst($_POST['primer_nombre']);
+$segundo_nombre=ucfirst($_POST['segundo_nombre']);
+$primer_apellido=ucfirst($_POST['primer_apellido']);
+$segundo_apellido=ucfirst($_POST['segundo_apellido']);
 $fecha_nacimiento=$_POST['fecha_nacimiento'];
 $id_persona=time();
 

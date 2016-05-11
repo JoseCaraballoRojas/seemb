@@ -10,10 +10,10 @@ include_once('../../modelos/Tipo.php');
            
       if (empty($retorno)){
           echo "<div class='alert alert-danger'>
-                 <strong>Informacion</strong> No hay Tipos de Platos Registrados.
+                 <strong>Informacion</strong> No hay tipos de platos registrados.
                </div>";
                echo "<section>
-            <span class='text-center'><h2>Tipos de Platos Registrados</h2>
+            <span class='text-center'><h3>Tipos de platos registrados</h3>
             <a href='vista_crear_tipo.php' class='btn btn-success pull-right'>
                 <span class='glyphicon glyphicon-plus-sign'> Crear</span>
             </a>
@@ -21,28 +21,24 @@ include_once('../../modelos/Tipo.php');
         }
       else{
             echo "<section>
-            <span class='text-center'><h2>Tipos de Platos Registrados</h2>
+            <span class='text-center'><h3>Tipos de platos registrados</h3>
             <a href='vista_crear_tipo.php' class='btn btn-success pull-right'>
                 <span class='glyphicon glyphicon-plus-sign'> Crear</span>
             </a>
             </section>";
              echo "
-                  <table class='table table-bordered  table-hover table-condensed table-striped'>
+                  <table class='table table-bordered  table-hover table-condensed table-striped' class='display' id='tablas'>
                     <thead >
                       <tr>
-                        <th class='text-center'>ID</th>
-                        <th class='text-center'>TIPO</th>
+                        <th class='text-center'>Tipo</th>
                        
-                        <th class='text-center'>ACCIONES</th>
+                        <th class='text-center'>Acciones</th>
                       </tr>
                     </thead>
                     <tbody>";
               foreach($retorno as $datos){
       
                 echo "<tr> 
-                          <td class='text-center'>
-                              ".$datos['id_tipo']."
-                          </td>
                           <td>
                               ".$datos['tipo']."
                           </td>

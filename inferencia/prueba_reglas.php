@@ -22,6 +22,9 @@ $dia=date("N");
 $turno=date("A");
 $menu_anterior=[];
 $primeros_platos=[];
+$segundos_platos=[];
+$terceros_platos=[];
+$ensaladas=[];
 $elegidos=[];
 $RESULTADO='';
 
@@ -79,16 +82,16 @@ foreach($platos as $datos){
 	if ($control=='TRUE') {
 		//si hay disponibilidad de los ingrediente en el inventario se agrega el plato actual a los platos que estan disponibles para preparar
 		$platos_disponibles[$i]= $datos;
-		if ($datos['tipo']=='PRIMER PLATO') {
+		if ($datos['tipo']=='Primer plato') {
 			$p1=$p1+1;
 		}
-		elseif ($datos['tipo']=='SEGUNDO PLATO') {
+		elseif ($datos['tipo']=='Segundo plato') {
 			$p2=$p2+1;
 		}
-		elseif ($datos['tipo']=='TERCER PLATO') {
+		elseif ($datos['tipo']=='tercer plato') {
 			$p3=$p3+1;
 		}
-		elseif ($datos['tipo']=='ENSALADA') {
+		elseif ($datos['tipo']=='Ensalada') {
 			$p4=$p4+1;
 		}
 	}
@@ -110,7 +113,7 @@ if (!empty($platos_disponibles))
 		$salir='no';
 		while ($salir=='no') {
 			$primer_plato=$platos_disponibles[array_rand($platos_disponibles)];
-			if ($primer_plato['tipo']=='PRIMER PLATO') {
+			if ($primer_plato['tipo']=='Primer plato') {
 				
 				$salir='si';
 			}
@@ -119,7 +122,7 @@ if (!empty($platos_disponibles))
 		$salir='no';
 		while ($salir=='no') {
 			$segundo_plato=$platos_disponibles[array_rand($platos_disponibles)];
-			if ($segundo_plato['tipo']=='SEGUNDO PLATO') {
+			if ($segundo_plato['tipo']=='Segundo plato') {
 				
 				$salir='si';
 			}
@@ -128,7 +131,7 @@ if (!empty($platos_disponibles))
 		$salir='no';
 		while ($salir=='no') {
 			$tercer_plato=$platos_disponibles[array_rand($platos_disponibles)];
-			if ($tercer_plato['tipo']=='TERCER PLATO') {
+			if ($tercer_plato['tipo']=='Tercer plato') {
 				
 				$salir='si';
 			}
@@ -136,7 +139,7 @@ if (!empty($platos_disponibles))
 		$salir='no';
 		while ($salir=='no') {
 			$ensalada=$platos_disponibles[array_rand($platos_disponibles)];
-			if ($ensalada['tipo']=='ENSALADA') {
+			if ($ensalada['tipo']=='Ensalada') {
 				
 				$salir='si';
 			}
@@ -167,8 +170,8 @@ if (!empty($platos_disponibles))
 			foreach ($platos_disponibles as $plato) 
 			{
 				$repetido='no';
-				//se comprueba si el plato actual en la variable que recorre el array es de tipo PRIMER PLATO
-				if ($plato['tipo']=='PRIMER PLATO') 
+				//se comprueba si el plato actual en la variable que recorre el array es de tipo Primer plato
+				if ($plato['tipo']=='Primer plato') 
 				{
 
 					foreach ($menu_anterior as $menu) 
@@ -193,8 +196,8 @@ if (!empty($platos_disponibles))
 					
 				}
 
-			//se comprueba si el plato actual en la variable que recorre el array es de tipo SEGUNDO PLATO
-				elseif ($plato['tipo']=='SEGUNDO PLATO') 
+			//se comprueba si el plato actual en la variable que recorre el array es de tipo Segundo plato
+				elseif ($plato['tipo']=='Segundo plato') 
 				{
 
 					foreach ($menu_anterior as $menu) 
@@ -219,8 +222,8 @@ if (!empty($platos_disponibles))
 					
 				}
 
-				//se comprueba si el plato actual en la variable que recorre el array es de tipo TERCER PLATO
-				elseif ($plato['tipo']=='TERCER PLATO') 
+				//se comprueba si el plato actual en la variable que recorre el array es de tipo tercer plato
+				elseif ($plato['tipo']=='Tercer plato') 
 				{
 
 					foreach ($menu_anterior as $menu) 
@@ -246,7 +249,7 @@ if (!empty($platos_disponibles))
 				}
 
 				//se comprueba si el plato actual en la variable que recorre el array es de tipo ENSALADA
-				elseif ($plato['tipo']=='ENSALADA') 
+				elseif ($plato['tipo']=='Ensalada') 
 				{
 
 					foreach ($menu_anterior as $menu) 

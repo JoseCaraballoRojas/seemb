@@ -26,22 +26,13 @@ $id_inventario=$_GET['id_inventario'];
 
             	});
 
-            	$.post("../controladores/productos/controlador_cargar.php", {}, function(data){
-               		$("#selectproducto").html('<option>Seleccione...</option>');
-                	$("#selectproducto").append(data);
-            	});
-            	$.post("../controladores/unidades/controlador_cargar.php", {}, function(data){
-               		$("#selectunidad").html('<option>Unid.--></option>');
-                	$("#selectunidad").append(data);
-            	});
-
 			});
   		</script>
 
 	</head>
 	<body id="body-index">
 			<br>
-		<div class="container">
+		<div class="container-fluid">
 			<div class="row">
 				<div class="col-md-12" >
 					<!--<div class="page-header">-->
@@ -54,7 +45,7 @@ $id_inventario=$_GET['id_inventario'];
 		</div>
 		
 		
-		<div class="container">
+		<div class="container-fluid">
 			<section id="section-index">
 				<div class="row">
 					<div class="col-md-12 ">
@@ -74,7 +65,7 @@ $id_inventario=$_GET['id_inventario'];
 			</div>
 			
 		
-			<div class="container">
+			<div class="container-fluid">
 				<div class="row">
 					<div class="col-md-12">
 						<!--FOOTER-->

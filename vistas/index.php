@@ -12,7 +12,7 @@ header ("Pragma: no-cache");
 	</head>
 	<body id="body-index">
 		<br>
-		<div class="container">
+		<div class="container-fluid">
 			<div class="row">
 				<div class="col-md-12" >
 					<?php include_once("default/header.php"); ?>
@@ -21,20 +21,20 @@ header ("Pragma: no-cache");
 		</div>
 		
 		
-			<div class="container">
+			<div class="container-fluid">
 			<section id="section-index">
 				<div class="row">
 					<div class="col-md-4 col-md-offset-4 ">
 						<form class="form-signin " method="POST" action="../controladores/sesiones/cotrolador_sesiones.php">
 						 	<br><br>
 						 	<div class="panel panel-danger">
-								<div class="panel-heading">
-									<h2 class="panel-title"><b>Por Favor Inicie Sesion</b></h2>
+								<div class="panel-heading text-center" >
+									<h2 class="panel-title"><b>Inicie Sesion</b></h2>
 								</div>
 
 								<div class="panel-body">
 								 	
-							        <label for="nombre_de_usuario"> Usuario :</label>
+							        <label for="nombre_de_usuario" > Usuario :</label>
 							        <br>
 							        <input type="text" id="inputusuario" class="form-control" placeholder="Introduce tu usuario" required autofocus autocomplete="off" name="usuario">
 							        <br>
@@ -43,9 +43,11 @@ header ("Pragma: no-cache");
 							        <br>
 							        <input type="password" id="inputPassword" class="form-control" placeholder="Introduce tu Contraseña" required name="password">
 				        			<br>
+				        			<br>
+				        			<a href="#" class="btn-danger"><b>Olvido su clave ?</a>
 					        	</div>
 					        	<div class="panel-footer">
-					        			<button class="btn btn-lg btn-success btn-block" type="submit" name="iniciarsesion" value="iniciar" >Iniciar Sesion</button>
+					        			<button class="btn btn-lg btn-success btn-block" type="submit" name="iniciarsesion" value="iniciar" > Iniciar Sesion <span class="glyphicon glyphicon-log-in"></span></button>
 					        				
 								</div>
 							</div>
@@ -58,7 +60,7 @@ header ("Pragma: no-cache");
 			</div>
 		
 		
-			<div class="container">
+			<div class="container-fluid">
 				<div class="row">
 					<div class="col-md-12">
 						<!--FOOTER-->

@@ -9,7 +9,7 @@ if(isset($_SESSION['usuario']))
 <html lang="es">
 	<head>
 		<meta charset="utf-8">
-		<title>Seemb</title>
+		<title>SEBCEMB</title>
 		<link rel="stylesheet" type="text/css" href="../librerias/bootstrap/css/bootstrap.css">
 		<link rel="stylesheet" type="text/css" href="../librerias/bootstrap/font-awesome/css/font-awesome.min.css">
 		<link rel="stylesheet" type="text/css" href="../publico/css/estilo-index.css">

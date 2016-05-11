@@ -1,8 +1,8 @@
 <?php
 include("../../modelos/Categoria.php");
 
-$categoria=$_POST['categoria'];
-$detalle=$_POST['detalle'];
+$categoria=ucfirst($_POST['categoria']);
+$detalle=ucfirst($_POST['detalle']);
 $id_categoria=$_POST['id_categoria'];
 
 if((empty($categoria) || strlen($categoria)<1) ||(empty($detalle)) || (empty($id_categoria))){

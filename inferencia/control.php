@@ -26,58 +26,58 @@ include_once('prueba_reglas.php');
       
                 echo "<tr> 
                           <td class='danger' colspan='1'><b>
-                              ".$primer_plato['tipo']."
+                              ".$primer_plato_almuerzo['tipo']."
                           </td>
                           <td class='text-center'  colspan='1'>
-                              ".$primer_plato['plato']."
+                              ".$primer_plato_almuerzo['plato']."
                           </td>
                           <td class='text-center' colspan='4'>
-                              ".$primer_plato['descripcion']."
+                              ".$primer_plato_almuerzo['descripcion']."
                           </td>
                           <td class='text-center' colspan='1'>
-                              ".$primer_plato['porcion']." ".$primer_plato['unidad']. "
+                              ".$primer_plato_almuerzo['porcion']." ".$primer_plato_almuerzo['unidad']. "
                           </td>
                       </tr>";
               echo "<tr> 
                           <td class=' danger' colspan='1'><b>
-                              ".$segundo_plato['tipo']."
+                              ".$segundo_plato_almuerzo['tipo']."
                           </td>
                           <td class='text-center' colspan='1'>
-                              ".$segundo_plato['plato']."
+                              ".$segundo_plato_almuerzo['plato']."
                           </td>
                           <td class='text-center' colspan='4'>
-                              ".$segundo_plato['descripcion']."
+                              ".$segundo_plato_almuerzo['descripcion']."
                           </td>
                           <td class='text-center' colspan='1'>
-                              ".$segundo_plato['porcion']." ".$segundo_plato['unidad']. "
+                              ".$segundo_plato_almuerzo['porcion']." ".$segundo_plato_almuerzo['unidad']. "
                           </td>
                       </tr>";
               echo "<tr> 
                           <td class=' danger' colspan='1'><b>
-                              ".$tercer_plato['tipo']."
+                              ".$tercer_plato_almuerzo['tipo']."
                           </td>
                           <td class='text-center' colspan='1'>
-                              ".$tercer_plato['plato']."
+                              ".$tercer_plato_almuerzo['plato']."
                           </td>
                           <td class='text-center' colspan='4'>
-                              ".$tercer_plato['descripcion']."
+                              ".$tercer_plato_almuerzo['descripcion']."
                           </td>
                           <td class='text-center' colspan='1'>
-                              ".$tercer_plato['porcion']." ".$tercer_plato['unidad']. "
+                              ".$tercer_plato_almuerzo['porcion']." ".$tercer_plato_almuerzo['unidad']. "
                           </td>
                       </tr>";
               echo "<tr> 
                           <td class='danger' colspan='1'><b>
-                              ".$ensalada['tipo']."
+                              ".$ensalada_almuerzo['tipo']."
                           </td>
                           <td class='text-center' colspan='1'>
-                              ".$ensalada['plato']."
+                              ".$ensalada_almuerzo['plato']."
                           </td>
                           <td class='text-center' colspan='4'>
-                              ".$ensalada['descripcion']."
+                              ".$ensalada_almuerzo['descripcion']."
                           </td>
                           <td class='text-center' colspan='1'>
-                              ".$ensalada['porcion']." ".$ensalada['unidad']. "
+                              ".$ensalada_almuerzo['porcion']." ".$ensalada_almuerzo['unidad']. "
                           </td>
                       </tr>";
               echo "<tr> 

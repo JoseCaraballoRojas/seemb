@@ -9,7 +9,7 @@ if(isset($_SESSION['usuario']))
 <html lang="es">
 	<head>
 		<meta charset="utf-8">
-		<title>Seemb</title>
+		<title>SEBCEMB</title>
 		<link rel="stylesheet" type="text/css" href="../librerias/bootstrap/css/bootstrap.css">
 		<link rel="stylesheet" type="text/css" href="../librerias/bootstrap/font-awesome/css/font-awesome.min.css">
 		<link rel="stylesheet" type="text/css" href="../publico/css/estilo-index.css">
@@ -26,7 +26,7 @@ if(isset($_SESSION['usuario']))
 	</head>
 	<body id="body-index">
 			<br>
-		<div class="container">
+		<div class="container-fluid">
 			<div class="row">
 				<div class="col-md-12" >
 					<!--<div class="page-header">-->
@@ -39,7 +39,7 @@ if(isset($_SESSION['usuario']))
 		</div>
 		
 		
-		<div class="container">
+		<div class="container-fluid">
 			<section id="section-index">
 				<div class="row">
 					<div class="col-md-12 ">
@@ -53,23 +53,29 @@ if(isset($_SESSION['usuario']))
 					<div class="col-md-4 col-md-offset-4 ">
 					 	
 						 	<form class="form-horizontal" method="POST" action="../controladores/categorias/controlador_crear.php">
-						 		<br>			 		
-						        <h2 class="form-signin-heading text-center">Crear Categoria</h2>
-						        
-						        <label for="grupo"> Categoria:</label>
-						        <br>
-						        <input type="text" id="inputcategoria" class="form-control input-xlarge" placeholder="Ingresa una Categoria" required autofocus autocomplete="off" name="categoria">
-						        <br>
-						        <label for="grupo"> Detalle:</label>
-						        <input type="text" id="inputdetalle" class="form-control input-xlarge" placeholder="Detalle de categoria" required autofocus autocomplete="off" name="detalle">
-								<br>
-								<br>
-								<div class="text-center">
-									<a class="btn  btn-info " href="vista_listar.php" ><span class='fa fa-reply'>  Atras</span></a>
-									<button class="btn  btn-danger " type="reset" name="cancelar" value="borrar" ><span class='glyphicon glyphicon-remove'> Borrar</span></button>
-									<button class="btn  btn-success " type="submit" name="crear" value="crear" ><span class='glyphicon glyphicon-floppy-disk'> Crear</span></button>
+						 		
+						 	<div class="panel panel-danger">
+					 			<div class="panel-heading">
+									<h2 class="panel-title"><b>Crear categoría</b></h2>
 								</div>
-			        			<br><br><br>
+								<div class="panel-body">
+						 		<br>					        
+						        <label for="grupo"> Categoría:</label>
+							        <br>
+							        <input type="text" id="inputcategoria" class="form-control input-xlarge" placeholder="Ingresa una Categoria" required autofocus autocomplete="off" name="categoria" pattern="[A-Za-z]{3-20}" title="solo debe ingresar letras">
+							        <br>
+							        <label for="grupo"> Detalle:</label>
+							        <input type="text" id="inputdetalle" class="form-control input-xlarge" placeholder="Detalle de categoria" required autofocus autocomplete="off" name="detalle" pattern="[A-Za-z]{3-20}" title="solo debe ingresar letras"	>
+									<br>
+								</div>
+								<div class="panel-footer">
+									<div class="text-center">
+										<a class="btn  btn-info " href="vista_listar_categorias.php" ><span class='fa fa-reply'>  Atras</span></a>
+										<button class="btn  btn-danger " type="reset" name="cancelar" value="borrar" ><span class='glyphicon glyphicon-remove'> Borrar</span></button>
+										<button class="btn  btn-success " type="submit" name="crear" value="crear" ><span class='glyphicon glyphicon-floppy-disk'> Crear</span></button>
+									</div>
+			        			</div>
+			        		</div>
 			     			</form>
 			     			
 					</div>	
@@ -77,7 +83,7 @@ if(isset($_SESSION['usuario']))
 			</div>
 			
 		
-			<div class="container">
+			<div class="container-fluid">
 				<div class="row">
 					<div class="col-md-12">
 						<!--FOOTER-->

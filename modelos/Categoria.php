@@ -14,7 +14,7 @@
 			{
 				$consulta=new MySQL1();
 				$consulta->MySQL();
-				$resultado=$consulta->consultar("SELECT *FROM categoria");
+				$resultado=$consulta->consultar("SELECT *FROM categoria ORDER BY categoria");
 				if($consulta->num_filas($resultado)>0)
 				    {
 				    	

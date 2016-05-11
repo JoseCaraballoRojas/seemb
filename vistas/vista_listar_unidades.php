@@ -34,7 +34,7 @@ if(isset($_SESSION['usuario']))
 	</head>
 	<body id="body-index">
 		<br>
-		<div class="container">
+		<div class="container-fluid">
 			<div class="row">
 				<div class="col-md-12" >
 					<!--<div class="page-header">-->
@@ -47,7 +47,7 @@ if(isset($_SESSION['usuario']))
 		</div>
 		
 		
-		<div class="container">
+		<div class="container-fluid">
 			<section id="section-index">
 				<div class="row">
 					<div class="col-md-12 ">
@@ -68,7 +68,7 @@ if(isset($_SESSION['usuario']))
 			</div>
 		
 		
-			<div class="container ">
+			<div class="container-fluid ">
 				<div class="row ">
 					<div class="col-md-12">
 						<!--FOOTER-->

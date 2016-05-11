@@ -28,11 +28,11 @@ if(isset($_SESSION['usuario']) and ($_SESSION['tipo']=='ADMINISTRADOR'))
   		<script>
   			$(document).ready(function(){
 				$.post("../controladores/productos/controlador_cargar.php", {}, function(data){
-               		$("#selectproducto").html('<option>Seleccione...</option>');
+               		//$("#selectproducto").html('<option>Seleccione...</option>');
                 	$("#selectproducto").append(data);
             	});
             	$.post("../controladores/unidades/controlador_cargar.php", {}, function(data){
-               		$("#selectunidad").html('<option>Unid.</option>');
+               		//$("#selectunidad").html('<option>Unid.</option>');
                 	$("#selectunidad").append(data);
             	});
 			});

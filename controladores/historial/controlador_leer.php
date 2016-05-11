@@ -10,30 +10,38 @@ include_once('../../modelos/Historial.php');
            
       if (empty($retorno)){
           echo "<div class='alert alert-danger'>
-                 <strong>Informacion</strong> No hay Historial Registrado en el Sistema.
+                 <strong>Informacion</strong> No hay historial registrado en el sistema.
                </div>";
                echo "<section>
-            <span class='text-center'><h2>Historial de los Usuarios en el Sistema</h2>
+            <span class='text-center'><h3>Historial de los usuarios en el sistema</h3>
             
             </section>";
         }
       else{
             echo "<section>
-            <span class='text-center'><h2>Historial de los Usuarios en el Sistema</h2>
+            <span class='text-center'><h3>Historial de los usuarios</h3>
             <a href='inicio.php' class='btn btn-primary btn-sm '>
-              <span class='glyphicon glyphicon-pencil'> Atras </span>
+              <span class='fa fa-reply'> Atras </span>
             </a>
             </section>";
              echo "
-                  <table class='table table-bordered  table-hover table-condensed table-striped'>
+                  <table class='table table-bordered  table-hover table-condensed table-striped' class='display' id='tablas'>
                     <thead >
                       <tr>
-                        <th class='text-center'>USUARIO</th>
-                        <th class='text-center'>ACCION</th>
-                        <th class='text-center'>FECHA</th>
-                        <th class='text-center'>HORA</th>
+                        <th class='text-center'>Usuario</th>
+                        <th class='text-center'>Accion</th>
+                        <th class='text-center'>Fecha</th>
+                        <th class='text-center'>Hora</th>
                       </tr>
                     </thead>
+                    <tfoot >
+                      <tr>
+                        <th class='text-center'>Usuario</th>
+                        <th class='text-center'>Accion</th>
+                        <th class='text-center'>Fecha</th>
+                        <th class='text-center'>Hora</th>
+                      </tr>
+                    </tfoot>
                     <tbody>";
               foreach($retorno as $datos){
       

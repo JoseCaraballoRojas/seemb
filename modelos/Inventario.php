@@ -17,7 +17,7 @@
 			{
 				$consulta=new MySQL1();
 				$consulta->MySQL();
-				$resultado=$consulta->consultar("SELECT i.id_inventario,i.cantidad,i.nivel_optimo,i.id_producto,i.id_unidad,u.id_unidad,u.unidad,p.id_producto,p.producto FROM inventario AS i JOIN productos As p on i.id_producto=p.id_producto JOIN unidades As u on i.id_unidad=u.id_unidad");
+				$resultado=$consulta->consultar("SELECT i.id_inventario,i.cantidad,i.nivel_optimo,i.id_producto,i.id_unidad,u.id_unidad,u.unidad,p.id_producto,p.producto FROM inventario AS i JOIN productos As p on i.id_producto=p.id_producto JOIN unidades As u on i.id_unidad=u.id_unidad ORDER BY p.producto");
 				if($consulta->num_filas($resultado)>0)
 				    {
 				    	
@@ -85,15 +85,13 @@
 			}
 
 			//funcion para actualizar el inventario almacenado en la base de datos.
-			public function Actualizar($id_inventario,$cantidad,$nivel_optimo,$producto,$unidad){
+			public function Actualizar($id_inventario,$cantidad,$nivel_optimo){
 				$actualizar= new MySQL1();
 				$actualizar->MySQL();
 				$this->_cantidad=$cantidad;
-				$this->_unidad=$unidad;
 				$this->_nivel_optimo=$nivel_optimo;
-				$this->_producto=$producto;
 				//se comprueba a ravez de una condicion si se ejecuta la actualizacion de la producto.
-				if($actualizar->consultar("UPDATE inventario set cantidad='$this->_cantidad', nivel_optimo='$this->_nivel_optimo',id_producto='$this->_producto', id_unidad='$this->_unidad'  WHERE id_inventario='$id_inventario'")){	
+				if($actualizar->consultar("UPDATE inventario set cantidad='$this->_cantidad', nivel_optimo='$this->_nivel_optimo'  WHERE id_inventario='$id_inventario'")){	
 					//si todo se realizo correctamente se emite un mensaje
 					$mensaje="El inventario se actualizo exitosamente";
 					return $mensaje;
@@ -148,6 +146,23 @@
 				$resultado=$consulta->consultar("SELECT *FROM inventario WHERE id_producto=".$id_producto." AND cantidad >= ".$cantidad."");
 				$valor=$consulta->num_filas($resultado);
 				return $valor;
+
+			}
+
+			//Funcion para listar los productos en alerta critica de inventario.
+			public function Alerta()
+			{
+				$consulta=new MySQL1();
+				$consulta->MySQL();
+				$resultado=$consulta->consultar("SELECT i.id_inventario,i.cantidad,i.nivel_optimo,i.id_producto,i.id_unidad,u.id_unidad,u.unidad,p.id_producto,p.producto FROM inventario AS i JOIN productos As p on i.id_producto=p.id_producto JOIN unidades As u on i.id_unidad=u.id_unidad ORDER BY p.producto");
+				if($consulta->num_filas($resultado)>0)
+				    {
+				    	
+				    	return $resultado;
+				    }
+				else{
+						return false;
+					}
 
 			}
 

@@ -8,26 +8,33 @@ include_once('../../modelos/Producto.php');
       $listar_productos= new Producto();
       $retorno=$listar_productos->Leer();
       echo "<section>
-            <span class='text-center'><h2>Productos Registrados</h2>
+            <span class='text-center'><h2>Productos registrados</h2>
             <a href='vista_crear_producto.php' class='btn btn-success pull-right'>
                 <span class='glyphicon glyphicon-plus-sign'> Crear</span>
             </a>
             </section>";
       echo "
-        <table class='table table-bordered  table-hover table-condensed table-striped'>
+        <table class='table table-bordered  table-hover table-condensed table-striped' class='display' id='tablas'>
           <thead >
             <tr>
-              <th class='text-center'>ID</th>
-              <th class='text-center'>PRODUCTO</th>
-              <th class='text-center'>PRESENTACION</th>
-              <th class='text-center'>CATEGORIA</th>
-              <th class='text-center'>ACCIONES</th>
+              <th class='text-center'>Producto</th>
+              <th class='text-center'>Presentación</th>
+              <th class='text-center'>Categoría</th>
+              <th class='text-center'>Acciones</th>
             </tr>
           </thead>
+          <tfoot >
+            <tr>
+              <th class='text-center'>Producto</th>
+              <th class='text-center'>Presentación</th>
+              <th class='text-center'>Categoría</th>
+              <th class='text-center'>Acciones</th>
+            </tr>
+          </tfoot>
           <tbody>";
       if (empty($retorno)){
           echo "<div class='alert alert-info'>
-                 <strong>Informacion</strong> No hay productos Registrados.
+                 <strong>Informacion</strong> No hay productos registrados.
                </div>";
         }
       else{
@@ -35,10 +42,7 @@ include_once('../../modelos/Producto.php');
               foreach($retorno as $datos){
       
                 echo "<tr> 
-                          <td class='text-center'>
-                              ".$datos['id_producto']."
-                          </td>
-                          <td>
+                          <td >
                               ".$datos['producto']."
                           </td>
                           <td class='text-center'>

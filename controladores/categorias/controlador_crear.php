@@ -1,8 +1,8 @@
 <?php
 include_once("../../modelos/Categoria.php");
 
-$categoria=$_POST['categoria'];
-$detalle=$_POST['detalle'];
+$categoria=ucfirst($_POST['categoria']);
+$detalle=ucfirst($_POST['detalle']);
 
 
 if((empty($categoria)) || (empty($detalle))){
